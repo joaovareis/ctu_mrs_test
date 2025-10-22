@@ -4,8 +4,7 @@ This package supplements a tutorial on how to create a custom drone model and ho
 
 ![](.fig/custom_drone.jpg)
 
-The tutorial is available here:
-https://ctu-mrs.github.io/docs/simulation/gazebo/gazebo/custom_drone.html
+The tutorial is available here: https://ctu-mrs.github.io/docs/simulations/gazebo/custom_drone
 
 It covers the following steps:
 
@@ -23,20 +22,26 @@ Use the start script `tmux/start.sh`.
 
 ## Configurables
 
-The model can be equipped with additional components: laser rangefinder, custom monochrome camera, ground truth publisher.
-These can be added in the spawner command:
+The model can be equipped with additional components: laser rangefinder, custom monochrome camera, ground truth publisher. These can be added in the spawner command:
+
 ```bash
-rosservice call /mrs_drone_spawner/spawn "1 --$UAV_TYPE"
+ros2 service call /mrs_drone_spawner/spawn mrs_msgs/srv/String "value: 1 --$UAV_TYPE"
 ```
+
 ```bash
-rosservice call /mrs_drone_spawner/spawn "1 --$UAV_TYPE --enable-ground-truth --enable-rangefinder --enable-custom-monochrome-camera"
+ros2 service call /mrs_drone_spawner/spawn mrs_msgs/srv/String "value: 1 --$UAV_TYPE --enable-ground-truth --enable-rangefinder --enable-custom-monochrome-camera"
 ```
+
 The simulation is configured to start 3 state estimators:
+
 - gps_baro
 - gps_garmin
 - passthrough
 
 Baro estimator will work without any additional sensors.
+
 Garmin estimator requires the rangefinder for a more precise altitude estimation.
+
 Passthrough estimator uses the ground truth data and should provide the highest accuraccy of state estimation.
+
 These can be enabled or disabled in `tmux/config/custom_config.yaml`.
