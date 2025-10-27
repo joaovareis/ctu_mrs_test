@@ -17,7 +17,7 @@ It covers the following steps:
 
 ## Running the full example
 
-Clone this repo and build it in a catkin workspace.
+Clone this repo and build it in a colcon workspace.
 Use the start script `tmux/start.sh`.
 
 ## Configurables

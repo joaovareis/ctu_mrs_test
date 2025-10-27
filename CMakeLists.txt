@@ -1,24 +1,21 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.20.0)
 project(mrs_gazebo_custom_drone_example)
 
-set(CATKIN_DEPENDENCIES
-  cmake_modules
-  mrs_uav_gazebo_simulation 
-  gazebo_ros
-  )
+set(DEPENDENCIES
+  ament_cmake
+  ros_gz
+)
 
-find_package(catkin REQUIRED COMPONENTS
-  ${CATKIN_DEPENDENCIES}
-  )
-
-catkin_package(
-  CATKIN_DEPENDS ${CATKIN_DEPENDENCIES}
-  )
+foreach(DEP IN LISTS DEPENDENCIES)
+  find_package(${DEP} REQUIRED)
+endforeach()
 
 ## --------------------------------------------------------------
 ## |                           Install                          |
 ## --------------------------------------------------------------
 
 install(DIRECTORY models/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/models
-  )
+  DESTINATION share/${PROJECT_NAME}/models
+)
+
+ament_package()

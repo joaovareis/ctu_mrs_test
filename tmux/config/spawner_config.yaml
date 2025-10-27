@@ -1,1 +1,3 @@
-extra_resource_paths: [ "mrs_gazebo_custom_drone_example" ]
+mrs_drone_spawner:
+  ros__parameters:
+    extra_resource_paths: [ "mrs_gazebo_custom_drone_example" ]
