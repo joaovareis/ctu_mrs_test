@@ -20,9 +20,9 @@ safety_area:
     # x = latitude, y = longitude [deg]  for frame_name=="latlon_origin"
     points: [
       -50, -50,
-       50, -50,
-       50,  50,
-      -50,  50,
+      50,  -50,
+      50,  50,
+      -50, 50,
     ]
 
   vertical:
