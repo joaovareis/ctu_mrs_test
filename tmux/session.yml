@@ -60,7 +60,7 @@ windows:
   #     layout: tiled
   #     panes:
   #       - waitForCore && ros2 run rviz2 rviz2 -d ./rviz.rviz
-  #       - waitForCore && ros2 launch mrs_rviz_plugins load_robot.launch.py
+  #       - waitForCore && ros2 launch mrs_rviz_plugins load_robot.launch
   # - layout:
   #     layout: tiled
   #     panes:
