@@ -3,7 +3,7 @@ name: ros_build_test
 on:
 
   push:
-    branches: [ master ]
+    branches: [ ros2_devel ]
 
     paths-ignore:
       - '**/README.md'
@@ -12,7 +12,7 @@ on:
     - cron:  '0 8 * * *' # every day at 10am UTC+2
 
   pull_request:
-    branches: [ master ]
+    branches: [ ros2 ]
 
   workflow_dispatch:
 
@@ -23,6 +23,4 @@ concurrency:
 jobs:
 
   build:
-    uses: ctu-mrs/ci_scripts/.github/workflows/ros_build_test.yml@master
-    secrets:
-      PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+    uses: ctu-mrs/ci_scripts/.github/workflows/ros_build_test.yml@ros2
