@@ -3,6 +3,8 @@ project(mrs_gazebo_custom_drone_example)
 
 set(DEPENDENCIES
   ament_cmake
+  mrs_gazebo_common_resources
+  ament_cmake
   ros_gz
 )
 
@@ -16,6 +18,10 @@ endforeach()
 
 install(DIRECTORY models/
   DESTINATION share/${PROJECT_NAME}/models
+)
+
+install(DIRECTORY ROMFS/
+  DESTINATION share/${PROJECT_NAME}/ROMFS
 )
 
 ament_package()
