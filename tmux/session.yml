@@ -35,11 +35,11 @@ windows:
   - hw_api:
       layout: tiled
       panes:
-        - ros2 launch mrs_uav_px4_api api.launch.py
+        - waitForGazebo && sleep 6 && ros2 launch mrs_uav_px4_api api.launch.py
   - core:
       layout: tiled
       panes:
-        - ros2 launch mrs_uav_core core.launch.py
+        - waitForHwApi && ros2 launch mrs_uav_core core.launch.py
           platform_config:=./config/platform_config.yaml
           custom_config:=./config/custom_config.yaml
           world_config:=./config/world_config.yaml
@@ -47,21 +47,20 @@ windows:
   - autostart:
       layout: tiled
       panes:
-        - ros2 launch mrs_uav_autostart automatic_start.launch.py custom_config:=./config/automatic_start.yaml
+        - waitForCore && ros2 launch mrs_uav_autostart automatic_start.launch.py custom_config:=./config/automatic_start.yaml
   - takeoff:
       layout: tiled
       panes:
-        - waitForCore && ./takeoff.sh
+        - waitForCore && sleep 6 && ./takeoff.sh
   - goto:
       layout: tiled
       panes:
         - waitForTakeoff && ./goto.py
-  # - rviz:
-  #     layout: tiled
-  #     panes:
-  #       - waitForCore && ros2 run rviz2 rviz2 -d ./rviz.rviz --ros-args -p use_sim_time:=true
-  #       - waitForCore && ros2 launch mrs_rviz_plugins load_robot.launch
-  # - layout:
-  #     layout: tiled
-  #     panes:
-  #       - waitForCore && sleep 2; ~/.i3/layout_manager.sh ./layout.json
+  - rviz:
+      layout: tiled
+      panes:
+        - waitForCore && ros2 run rviz2 rviz2 -d ./rviz.rviz --ros-args -p use_sim_time:=true
+  - layout:
+      layout: tiled
+      panes:
+        - waitForCore && sleep 2; ~/.i3/layout_manager.sh ./layout.json
