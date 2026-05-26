@@ -1,0 +1,1176 @@
+root@pcjoao:~/ros2_ws# ros2 launch imav_26 sim.launch.py 
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-05-26-00-40-23-094763-pcjoao-518050
+[INFO] [launch]: Default logging verbosity is set to INFO
+dict_items([('fcu_url', '/dev/pixhawk:2000000'), ('gcs_url', 'tcp-l://'), ('tgt_system', '1'), ('tgt_component', '1'), ('log_output', 'screen'), ('fcu_protocol', 'v2.0'), ('respawn_mavros', 'False'), ('namespace', 'mavros'), ('pluginlists_yaml', '/opt/ros/jazzy/share/mrs_uav_px4_api/config/mavros_plugins.yaml'), ('config_yaml', '/opt/ros/jazzy/share/mrs_uav_px4_api/config/mavros_px4_config.yaml')])
+[INFO] [launch.user]: 
+[mrs_drone_spawner.launch.py] Custom config file: /root/ros2_ws/install/imav_26/share/imav_26/config/spawner.yaml
+[mrs_drone_spawner.launch.py] Default config file: /opt/ros/jazzy/share/mrs_uav_gazebo_simulator/config/spawner_params.yaml
+[INFO] [gazebo-1]: process started with pid [518056]
+[INFO] [parameter_bridge-2]: process started with pid [518057]
+[INFO] [mrs_drone_spawner-3]: process started with pid [518058]
+[parameter_bridge-2] [INFO] [1779756023.372584333] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[parameter_bridge-2] [INFO] [1779756023.373220421] [ros_gz_bridge]: Creating ROS->GZ service bridge [/world/default/create (ros_gz_interfaces/srv/SpawnEntity -> /)]
+[parameter_bridge-2] [INFO] [1779756023.374073265] [ros_gz_bridge]: Creating ROS->GZ service bridge [/world/default/remove (ros_gz_interfaces/srv/DeleteEntity -> /)]
+[mrs_drone_spawner-3] [INFO] [1779756023.646241622] [mrs_drone_spawner]: 	(1/23): mrs_robots_description/sdf/components/camera/bluefox/bluefox.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.662170320] [mrs_drone_spawner]: 	(2/23): mrs_robots_description/sdf/components/camera/mobius/mobius.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.673337589] [mrs_drone_spawner]: 	(3/23): mrs_robots_description/sdf/components/camera/oak/oak_d.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.685804320] [mrs_drone_spawner]: 	(4/23): mrs_robots_description/sdf/components/camera/realsense/realsense_depth_only.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.695821895] [mrs_drone_spawner]: 	(5/23): mrs_robots_description/sdf/components/camera/realsense/realsense_rgb_plus_depth.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.714883770] [mrs_drone_spawner]: 	(6/23): mrs_robots_description/sdf/components/camera/realsense/realsense_rgbd_single_plugin.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.724078723] [mrs_drone_spawner]: 	(7/23): mrs_robots_description/sdf/components/component_snippets.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.750420073] [mrs_drone_spawner]: 	(8/23): mrs_robots_description/sdf/components/generic_components.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.795746148] [mrs_drone_spawner]: 	(9/23): mrs_robots_description/sdf/components/lidar/ouster/ouster.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.809901881] [mrs_drone_spawner]: 	(10/23): mrs_robots_description/sdf/components/lidar/rplidar/rplidar.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.816732063] [mrs_drone_spawner]: 	(11/23): mrs_robots_description/sdf/components/lidar/scanse_sweep/scanse_sweep.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.822933330] [mrs_drone_spawner]: 	(12/23): mrs_robots_description/sdf/components/lidar/velodyne/velodyne.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.831020378] [mrs_drone_spawner]: 	(13/23): mrs_robots_description/sdf/components/rangefinder/garmin/garmin_down_external.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.835756428] [mrs_drone_spawner]: 	(14/23): mrs_robots_description/sdf/components/rangefinder/garmin/garmin_down_pixhawk.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.840431415] [mrs_drone_spawner]: 	(15/23): mrs_robots_description/sdf/components/rangefinder/garmin/garmin_up_external.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.844991646] [mrs_drone_spawner]: 	(16/23): mrs_robots_description/sdf/drones/f330.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.878642462] [mrs_drone_spawner]: 	(17/23): mrs_robots_description/sdf/drones/f450.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.931359686] [mrs_drone_spawner]: 	(18/23): mrs_robots_description/sdf/drones/f550.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756023.987501823] [mrs_drone_spawner]: 	(19/23): mrs_robots_description/sdf/drones/m690.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756024.006247727] [mrs_drone_spawner]: 	(20/23): mrs_robots_description/sdf/drones/naki.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756024.031020448] [mrs_drone_spawner]: 	(21/23): mrs_robots_description/sdf/drones/robofly.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756024.051179370] [mrs_drone_spawner]: 	(22/23): mrs_robots_description/sdf/drones/t650.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756024.095483970] [mrs_drone_spawner]: 	(23/23): mrs_robots_description/sdf/drones/x500.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756024.140521086] [mrs_drone_spawner]: Loading all templates
+[gazebo-1] libEGL warning: pci id for fd 92: 10de:1f9d, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 93: 10de:1f9d, driver (null)
+[gazebo-1] pci id for fd 94: 10de:1f9d, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 92: 10de:1f9d, driver (null)
+[gazebo-1] 
+[gazebo-1] pci id for fd 93: 10de:1f9d, driver (null)
+[gazebo-1] pci id for fd 94: 10de:1f9d, driver (null)
+[gazebo-1] libEGL warning: egl: failed to create dri2 screen
+[gazebo-1] libEGL warning: pci id for fd 92: 10de:1f9d, driver (null)
+[gazebo-1] 
+[mrs_drone_spawner-3] [INFO] [1779756024.577805522] [mrs_drone_spawner]: Reindexing imported templates
+[mrs_drone_spawner-3] [INFO] [1779756024.578132597] [mrs_drone_spawner]: Adding available components from dependencies
+[mrs_drone_spawner-3] [INFO] [1779756024.578400310] [mrs_drone_spawner]: Pruning components to only include callables
+[mrs_drone_spawner-3] [INFO] [1779756024.797507889] [mrs_drone_spawner]: Template database built
+[mrs_drone_spawner-3] [INFO] [1779756024.797753939] [mrs_drone_spawner]: Jinja templates loaded.
+[mrs_drone_spawner-3] [INFO] [1779756024.813624563] [mrs_drone_spawner]: Initialized
+[INFO] [ros2-4]: process started with pid [518309]
+[ros2-4] waiting for service to become available...
+[ros2-4] requester: making request: mrs_msgs.srv.String_Request(value='1 --x500 --enable-ground-truth --enable-rangefinder --enable-bluefox-camera-down')
+[ros2-4] 
+[mrs_drone_spawner-3] [INFO] [1779756028.855152445] [mrs_drone_spawner]: Spawn called with args "1 --x500 --enable-ground-truth --enable-rangefinder --enable-bluefox-camera-down"
+[mrs_drone_spawner-3] [INFO] [1779756028.855796313] [mrs_drone_spawner]: Valid robot IDs: [1]
+[mrs_drone_spawner-3] [INFO] [1779756028.856090258] [mrs_drone_spawner]: Spawn poses returned: {1: {'x': -2.06, 'y': -3.11, 'z': 0.3, 'heading': -2.94}}
+[mrs_drone_spawner-3] [INFO] [1779756028.856389160] [mrs_drone_spawner]: Spawner params assigned "{'help': False, 'model': 'x500', 'ids': [1], 'names': ['uav1'], 'spawn_poses': {1: {'x': -2.06, 'y': -3.11, 'z': 0.3, 'heading': -2.94}}, 'enable-ground-truth': None, 'enable-rangefinder': None, 'enable-bluefox-camera-down': None}"
+[mrs_drone_spawner-3] [INFO] [1779756028.856658098] [mrs_drone_spawner]: Adding vehicles to a spawn queue
+[mrs_drone_spawner-3] [INFO] [1779756028.860177973] [mrs_drone_spawner]: Mavros PX4 config for uav1 written to /tmp/mrs_gazebo_simulator_2026_05_26_00_40_24/mavros_px4_config_uav1.yaml
+[ros2-4] response:
+[ros2-4] mrs_msgs.srv.String_Response(success=True, message='Launch sequence queued for 1 robots')
+[ros2-4] 
+[mrs_drone_spawner-3] [INFO] [1779756028.904606954] [mrs_drone_spawner]: Rendering model "x500" using template /opt/ros/jazzy/share/mrs_uav_gazebo_simulator/models/mrs_robots_description/sdf/drones/x500.sdf.jinja
+[mrs_drone_spawner-3] [INFO] [1779756028.914471103] [mrs_drone_spawner]: Model for uav1 written to /tmp/mrs_gazebo_simulator_2026_05_26_00_40_24/mrs_drone_spawner_uav1.sdf
+[mrs_drone_spawner-3] [INFO] [1779756028.914811788] [mrs_drone_spawner]: Requesting spawn for model uav1
+[mrs_drone_spawner-3] [INFO] [1779756028.915336662] [mrs_drone_spawner]: [Sdf2Tf_Publisher] Creating tf link from: uav1/fcu to: uav1/bluefox_down
+[mrs_drone_spawner-3] [INFO] [1779756028.915686949] [mrs_drone_spawner]: [Sdf2Tf_Publisher] Creating tf link from: uav1/bluefox_down to: uav1/bluefox_down/color
+[mrs_drone_spawner-3] [INFO] [1779756028.915953585] [mrs_drone_spawner]: [Sdf2Tf_Publisher] Creating tf link from: uav1/bluefox_down/color to: uav1/bluefox_down/color_optical
+[mrs_drone_spawner-3] [INFO] [1779756028.916345960] [mrs_drone_spawner]: [Sdf2Tf_Publisher] Published 3 static transforms.
+[INFO] [ros2-4]: process has finished cleanly [pid 518309]
+[mrs_drone_spawner-3] [WARN] [1779756029.023427249] [mrs_drone_spawner]: Skipping IMU because one or more required topics are missing.
+[mrs_drone_spawner-3] [WARN] [1779756029.023727235] [mrs_drone_spawner]: Skipping Lidar because one or more required topics are missing.
+[mrs_drone_spawner-3] [INFO] [1779756029.028106491] [mrs_drone_spawner]: ros_gz_bridge config for uav1 written to /tmp/mrs_gazebo_simulator_2026_05_26_00_40_24/ros_gz_bridge_config_uav1.yaml
+[mrs_drone_spawner-3] [INFO] [1779756029.028355871] [mrs_drone_spawner]: Launching ros_gz_bridge for uav1
+[mrs_drone_spawner-3] [INFO] [1779756029.029025543] [mrs_drone_spawner]: launch_arguments: {'namespace': 'uav1', 'ros_gz_bridge_config': '/tmp/mrs_gazebo_simulator_2026_05_26_00_40_24/ros_gz_bridge_config_uav1.yaml', 'ros_gz_image_topics': '/uav1/bluefox_down/image_raw', 'bridge_debug': 'false'}
+[mrs_drone_spawner-3] [INFO] [1779756029.032520220] [mrs_drone_spawner]: ros_gz_bridge for uav1 launched
+[mrs_drone_spawner-3] [INFO] [1779756029.032978363] [mrs_drone_spawner]: Launching mavros for uav1
+[mrs_drone_spawner-3] [INFO] [1779756029.033622656] [mrs_drone_spawner]: launch_arguments: {'fcu_url': 'udp://127.0.0.1:14005@127.0.0.1:14004', 'gcs_url': '', 'tgt_system': '2', 'tgt_component': '1', 'pluginlists_yaml': '/opt/ros/jazzy/share/mrs_uav_px4_api/config/mavros_plugins.yaml', 'config_yaml': '/tmp/mrs_gazebo_simulator_2026_05_26_00_40_24/mavros_px4_config_uav1.yaml', 'namespace': 'uav1/mavros', 'use_sim_time': 'true', 'base_link_frame_id': 'uav1/base_link', 'odom_frame_id': 'uav1/odom', 'map_frame_id': 'uav1/map'}
+[mrs_drone_spawner-3] [INFO] [launch]: All log files can be found below /root/.ros/log/2026-05-26-00-40-29-028492-pcjoao-518058
+[mrs_drone_spawner-3] [INFO] [launch]: Default logging verbosity is set to INFO
+[mrs_drone_spawner-3] [INFO] [1779756029.038195008] [mrs_drone_spawner]: Mavros for uav1 launched
+[mrs_drone_spawner-3] [INFO] [1779756029.038502331] [mrs_drone_spawner]: Waiting for 10.0 s before launching firmware
+[mrs_drone_spawner-3] [INFO] [launch]: All log files can be found below /root/.ros/log/2026-05-26-00-40-29-028492-pcjoao-518058
+[mrs_drone_spawner-3] [INFO] [launch]: Default logging verbosity is set to INFO
+[mrs_drone_spawner-3] [INFO] [parameter_bridge-1]: process started with pid [518333]
+[mrs_drone_spawner-3] [INFO] [image_bridge-2]: process started with pid [518334]
+[gazebo-1] Warning [Utils.cc:132] [/sdf/model[@name="uav1"]/link[@name="bluefox_down"]/sensor[@name="bluefox_down/color"]/gz_frame_id:<data-string>:L1261]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] Warning [Utils.cc:132] [/sdf/model[@name="uav1"]/link[@name="bluefox_down"]/sensor[@name="bluefox_down/color"]/ros_camera_info_topic:<data-string>:L1264]: XML Element[ros_camera_info_topic], child of element[sensor], not defined in SDF. Copying[ros_camera_info_topic] as children of [sensor].
+[gazebo-1] Warning [Utils.cc:132] [/sdf/model[@name="uav1"]/link[@name="bluefox_down"]/sensor[@name="bluefox_down/color"]/ros_color_image_topic:<data-string>:L1265]: XML Element[ros_color_image_topic], child of element[sensor], not defined in SDF. Copying[ros_color_image_topic] as children of [sensor].
+[gazebo-1] Warning [Utils.cc:132] [/sdf/model[@name="uav1"]/link[@name="bluefox_down"]/sensor[@name="bluefox_down/color"]/gz_camera_info_topic:<data-string>:L1266]: XML Element[gz_camera_info_topic], child of element[sensor], not defined in SDF. Copying[gz_camera_info_topic] as children of [sensor].
+[gazebo-1] Warning [Utils.cc:132] [/sdf/model[@name="uav1"]/link[@name="bluefox_down"]/sensor[@name="bluefox_down/color"]/gz_frame_id:<data-string>:L1228]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] Warning [Utils.cc:132] [/sdf/model[@name="uav1"]/link[@name="bluefox_down"]/sensor[@name="bluefox_down/color"]/ros_camera_info_topic:<data-string>:L1229]: XML Element[ros_camera_info_topic], child of element[sensor], not defined in SDF. Copying[ros_camera_info_topic] as children of [sensor].
+[gazebo-1] Warning [Utils.cc:132] [/sdf/model[@name="uav1"]/link[@name="bluefox_down"]/sensor[@name="bluefox_down/color"]/ros_color_image_topic:<data-string>:L1230]: XML Element[ros_color_image_topic], child of element[sensor], not defined in SDF. Copying[ros_color_image_topic] as children of [sensor].
+[gazebo-1] Warning [Utils.cc:132] [/sdf/model[@name="uav1"]/link[@name="bluefox_down"]/sensor[@name="bluefox_down/color"]/gz_camera_info_topic:<data-string>:L1231]: XML Element[gz_camera_info_topic], child of element[sensor], not defined in SDF. Copying[gz_camera_info_topic] as children of [sensor].
+[mrs_drone_spawner-3] [INFO] [mavros_node-1]: process started with pid [518384]
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.206784633] [uav1.mavros.mavros_node]: Starting mavros_node container
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.206837229] [uav1.mavros.mavros_node]: FCU URL: udp://127.0.0.1:14005@127.0.0.1:14004
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.206841199] [uav1.mavros.mavros_node]: GCS URL: 
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.206843986] [uav1.mavros.mavros_node]: UAS Prefix: /uas2
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.206846313] [uav1.mavros.mavros_node]: Starting mavros router node
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.213368804] [uav1.mavros.mavros_router]: Built-in SIMD instructions: SSE, SSE2
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.213390274] [uav1.mavros.mavros_router]: Built-in MAVLink package version: 2026.3.3
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.213397368] [uav1.mavros.mavros_router]: Known MAVLink dialects: common ardupilotmega ASLUAV AVSSUAS all csAirLink cubepilot development icarous loweheiser marsh matrixpilot paparazzi standard stemstudios storm32 uAvionix ualberta
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.213401175] [uav1.mavros.mavros_router]: MAVROS Router started
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.213469681] [uav1.mavros.mavros_node]: Starting mavros uas node
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.236000395] [uav1.mavros.mavros_router]: Requested to add endpoint: type: 0, url: udp://127.0.0.1:14005@127.0.0.1:14004
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.236037262] [uav1.mavros.mavros_router]: Endpoint link[1000] created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.236292846] [uav1.mavros.mavros_router]: link[1000] opened successfully
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.236304191] [uav1.mavros.mavros_router]: Requested to add endpoint: type: 2, url: /uas2
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.236317520] [uav1.mavros.mavros_router]: Endpoint link[1001] created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.238657908] [uav1.mavros.mavros_router]: link[1001] opened successfully
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.246133707] [uav1.mavros.mavros]: UAS Executor started, threads: 12
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.246165285] [uav1.mavros.mavros]: Plugin actuator_control ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.246192745] [uav1.mavros.mavros]: Plugin adsb ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.258946770] [uav1.mavros.mavros]: Plugin altitude created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.258978962] [uav1.mavros.mavros]: Plugin altitude initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.258984662] [uav1.mavros.mavros]: Plugin cam_imu_sync ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.258988060] [uav1.mavros.mavros]: Plugin camera ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.258991110] [uav1.mavros.mavros]: Plugin cellular_status ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.266656492] [uav1.mavros.mavros]: Plugin command created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.266691781] [uav1.mavros.mavros]: Plugin command initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.266698136] [uav1.mavros.mavros]: Plugin companion_process_status ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.266701822] [uav1.mavros.mavros]: Plugin debug_value ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.281638824] [uav1.mavros.distance_sensor]: DS: garmin: Loading config: id: 0
+[mrs_drone_spawner-3] [mavros_node-1] frame_id: uav1/garmin
+[mrs_drone_spawner-3] [mavros_node-1] orientation: CUSTOM
+[mrs_drone_spawner-3] [mavros_node-1] field_of_view: 0.0
+[mrs_drone_spawner-3] [mavros_node-1] send_tf: false
+[mrs_drone_spawner-3] [mavros_node-1] sensor_position: {x: 0.0, y: 0.0625, z: -0.009}
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.282956285] [uav1.mavros.mavros]: Plugin distance_sensor created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.282977982] [uav1.mavros.mavros]: Plugin distance_sensor initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.282984383] [uav1.mavros.mavros]: Plugin esc_status ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.282987774] [uav1.mavros.mavros]: Plugin esc_telemetry ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.282990773] [uav1.mavros.mavros]: Plugin fake_gps ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.282993641] [uav1.mavros.mavros]: Plugin ftp ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.282996667] [uav1.mavros.mavros]: Plugin geofence ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.282999562] [uav1.mavros.mavros]: Plugin gimbal_control ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.292298034] [uav1.mavros.mavros]: Plugin global_position created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.292348242] [uav1.mavros.mavros]: Plugin global_position initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.299067271] [uav1.mavros.mavros]: Plugin gps_input created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.299095998] [uav1.mavros.mavros]: Plugin gps_input initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.305483696] [uav1.mavros.mavros]: Plugin gps_rtk created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.305530114] [uav1.mavros.mavros]: Plugin gps_rtk initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.317184106] [uav1.mavros.mavros]: Plugin gps_status created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.317234776] [uav1.mavros.mavros]: Plugin gps_status initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.317244305] [uav1.mavros.mavros]: Plugin guided_target ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.317291961] [uav1.mavros.mavros]: Plugin hil ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.326522114] [uav1.mavros.mavros]: Plugin home_position created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.326558803] [uav1.mavros.mavros]: Plugin home_position initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.338677888] [uav1.mavros.mavros]: Plugin imu created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.338731623] [uav1.mavros.mavros]: Plugin imu initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.338739049] [uav1.mavros.mavros]: Plugin landing_target ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.347883161] [uav1.mavros.mavros]: Plugin local_position created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.347925267] [uav1.mavros.mavros]: Plugin local_position initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.347932443] [uav1.mavros.mavros]: Plugin log_transfer ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.356764505] [uav1.mavros.mavros]: Plugin mag_calibration_status created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.356853226] [uav1.mavros.mavros]: Plugin mag_calibration_status initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.366945758] [uav1.mavros.mavros]: Plugin manual_control created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.366979840] [uav1.mavros.mavros]: Plugin manual_control initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.366988435] [uav1.mavros.mavros]: Plugin mocap_pose_estimate ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.366991686] [uav1.mavros.mavros]: Plugin mount_control ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.366995159] [uav1.mavros.mavros]: Plugin nav_controller_output ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.366998233] [uav1.mavros.mavros]: Plugin obstacle_distance ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.367001493] [uav1.mavros.mavros]: Plugin obstacle_distance_3d ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.379038201] [uav1.mavros.mavros]: Plugin odometry created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.379076573] [uav1.mavros.mavros]: Plugin odometry initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.379083831] [uav1.mavros.mavros]: Plugin onboard_computer_status ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.379087332] [uav1.mavros.mavros]: Plugin open_drone_id ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.379090469] [uav1.mavros.mavros]: Plugin optical_flow ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.379093540] [uav1.mavros.mavros]: Plugin param ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.379097137] [uav1.mavros.mavros]: Plugin play_tune ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.379100103] [uav1.mavros.mavros]: Plugin px4flow ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.379103288] [uav1.mavros.mavros]: Plugin rallypoint ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.379106230] [uav1.mavros.mavros]: Plugin rangefinder ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.388994883] [uav1.mavros.mavros]: Plugin rc_io created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.389050701] [uav1.mavros.mavros]: Plugin rc_io initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.397811977] [uav1.mavros.mavros]: Plugin setpoint_accel created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.397842609] [uav1.mavros.mavros]: Plugin setpoint_accel initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.408121841] [uav1.mavros.mavros]: Plugin setpoint_attitude created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.408283409] [uav1.mavros.mavros]: Plugin setpoint_attitude initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.420414999] [uav1.mavros.mavros]: Plugin setpoint_position created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.420466664] [uav1.mavros.mavros]: Plugin setpoint_position initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.432207731] [uav1.mavros.mavros]: Plugin setpoint_raw created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.432259380] [uav1.mavros.mavros]: Plugin setpoint_raw initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.432268249] [uav1.mavros.mavros]: Plugin setpoint_trajectory ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.442545344] [uav1.mavros.mavros]: Plugin setpoint_velocity created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.442578270] [uav1.mavros.mavros]: Plugin setpoint_velocity initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.442586080] [uav1.mavros.mavros]: Plugin sim_state ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.459617082] [uav1.mavros.mavros]: Plugin sys_status created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.459673485] [uav1.mavros.mavros]: Plugin sys_status initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.469909435] [uav1.mavros.time]: TM: Timesync mode: MAVLINK
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472462760] [uav1.mavros.mavros]: Plugin sys_time created
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472496656] [uav1.mavros.mavros]: Plugin sys_time initialized
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472504574] [uav1.mavros.mavros]: Plugin tdr_radio ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472509690] [uav1.mavros.mavros]: Plugin terrain ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472514102] [uav1.mavros.mavros]: Plugin trajectory ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472548839] [uav1.mavros.mavros]: Plugin tunnel ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472554939] [uav1.mavros.mavros]: Plugin vfr_hud ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472559439] [uav1.mavros.mavros]: Plugin vibration ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472563981] [uav1.mavros.mavros]: Plugin vision_pose ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472568829] [uav1.mavros.mavros]: Plugin vision_speed ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472573942] [uav1.mavros.mavros]: Plugin waypoint ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472578977] [uav1.mavros.mavros]: Plugin wheel_odometry ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.472584300] [uav1.mavros.mavros]: Plugin wind_estimation ignored
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.473880745] [uav1.mavros.mavros]: Built-in SIMD instructions: SSE, SSE2
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.473902383] [uav1.mavros.mavros]: Built-in MAVLink package version: 2026.3.3
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.473906214] [uav1.mavros.mavros]: Known MAVLink dialects: common ardupilotmega ASLUAV AVSSUAS all csAirLink cubepilot development icarous loweheiser marsh matrixpilot paparazzi standard stemstudios storm32 uAvionix ualberta
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.473909301] [uav1.mavros.mavros]: MAVROS UAS via /uas2 started. MY ID 2.191, TARGET ID 2.1
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756029.570864213] [uav1.mavros.mavros_router]: link[1001] detected remote address 2.191
+[mrs_drone_spawner-3] [parameter_bridge-1] [INFO] [1779756030.127121840] [uav1.ros_gz_bridge]: Creating GZ->ROS Bridge: [/uav1/bluefox_down/camera_info (gz.msgs.CameraInfo) -> /uav1/bluefox_down/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[mrs_drone_spawner-3] [parameter_bridge-1] [INFO] [1779756030.130825327] [uav1.ros_gz_bridge]: Creating GZ->ROS Bridge: [/uav1/ground_truth (gz.msgs.Odometry) -> /uav1/ground_truth (nav_msgs/msg/Odometry)] (Lazy 0)
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756031.463514036] [uav1.mavros.sys]: VER: broadcast request timeout, retries left 4
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756032.463108388] [uav1.mavros.sys]: VER: broadcast request timeout, retries left 3
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756033.463906786] [uav1.mavros.sys]: VER: unicast request timeout, retries left 2
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756034.463216012] [uav1.mavros.sys]: VER: unicast request timeout, retries left 1
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756035.463114179] [uav1.mavros.sys]: VER: unicast request timeout, retries left 0
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756036.463551342] [uav1.mavros.sys]: VER: your FCU don't support AUTOPILOT_VERSION, switched to default capabilities
+[mrs_drone_spawner-3] [INFO] [1779756039.038937876] [mrs_drone_spawner]: Launching PX4 firmware for uav1
+[mrs_drone_spawner-3] [INFO] [1779756039.043489746] [mrs_drone_spawner]: PX4 firmware for uav1 launched
+[mrs_drone_spawner-3] [INFO] [1779756039.043958399] [mrs_drone_spawner]: QGC connection for uav1 created at localhost UDP port 14007
+[mrs_drone_spawner-3] [INFO] [1779756039.044270452] [mrs_drone_spawner]: Vehicle uav1 successfully spawned
+[mrs_drone_spawner-3] [INFO] [launch]: All log files can be found below /root/.ros/log/2026-05-26-00-40-29-028492-pcjoao-518058
+[mrs_drone_spawner-3] [INFO] [launch]: Default logging verbosity is set to INFO
+[mrs_drone_spawner-3] [INFO] [sitl_uav_1-1]: process started with pid [518698]
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [px4] instance: 1
+[mrs_drone_spawner-3] [sitl_uav_1-1] 
+[mrs_drone_spawner-3] [sitl_uav_1-1] ______  __   __    ___ 
+[mrs_drone_spawner-3] [sitl_uav_1-1] | ___ \ \ \ / /   /   |
+[mrs_drone_spawner-3] [sitl_uav_1-1] | |_/ /  \ V /   / /| |
+[mrs_drone_spawner-3] [sitl_uav_1-1] |  __/   /   \  / /_| |
+[mrs_drone_spawner-3] [sitl_uav_1-1] | |     / /^\ \ \___  |
+[mrs_drone_spawner-3] [sitl_uav_1-1] \_|     \/   \/     |_/
+[mrs_drone_spawner-3] [sitl_uav_1-1] 
+[mrs_drone_spawner-3] [sitl_uav_1-1] px4 starting.
+[mrs_drone_spawner-3] [sitl_uav_1-1] 
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [px4] startup script: /bin/sh etc/init.d-posix/rcS 1
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [init] found model autostart file as SYS_AUTOSTART=4001
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [param] selected parameter default file parameters.bson
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [param] importing from 'parameters.bson'
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [parameters] BSON document size 391 bytes, decoded 391 bytes (INT32:16, FLOAT:4)
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [param] selected parameter backup file parameters_backup.bson
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [dataman] data manager file './dataman' size is 1208528 bytes
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [init] Gazebo simulator 8.11.0
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [init] gazebo already running world: default
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [init] Gazebo world is ready
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [init] PX4_GZ_MODEL_NAME set, PX4 will attach to existing model
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [lockstep_scheduler] setting initial absolute time to 20105000 us
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [gz_bridge] world: default, model: uav1
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [commander] LED: open /dev/led0 failed (22)
+[mrs_drone_spawner-3] [sitl_uav_1-1] WARN  [health_and_arming_checks] Preflight Fail: ekf2 missing data
+[mrs_drone_spawner-3] [sitl_uav_1-1] WARN  [health_and_arming_checks] Preflight Fail: system power unavailable
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [tone_alarm] home set
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14004 remote port 14005
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756046.542956903] [uav1.mavros.mavros_router]: link[1000] detected remote address 2.1
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756046.543345304] [uav1.mavros.sys]: FCU: UNK(8): EVENT 1914663 with args -0-2-1-0-56-0-0-16-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [mavlink] partner IP: 127.0.0.1
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756046.643414315] [uav1.mavros.imu]: IMU: High resolution IMU detected!
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756046.771104254] [uav1.mavros.mavros]: CON: Got HEARTBEAT, connected. FCU: PX4 Autopilot
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756046.771285408] [uav1.mavros.imu]: IMU: High resolution IMU detected!
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 14006 remote port 14007
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [logger] logger started (mode=all)
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [logger] Start file log (type: full)
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [logger] [logger] ./log/2026-05-26/00_40_47.ulg	
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [logger] Opened full log file: ./log/2026-05-26/00_40_47.ulg
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756047.025832501] [uav1.mavros.sys]: FCU: EVENT 1203183 with args -234-7-5-26-0-40-47-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+[mrs_drone_spawner-3] [sitl_uav_1-1] INFO  [px4] Startup script returned successfully
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756047.065688763] [uav1.mavros.imu]: IMU: Attitude quaternion IMU detected!
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756047.780734206] [uav1.mavros.sys]: VER: 2.1: Capabilities         0x000000000000e8ff
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756047.780782447] [uav1.mavros.sys]: VER: 2.1: Flight software:     01110000 (8e67f94599000000)
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756047.780788694] [uav1.mavros.sys]: VER: 2.1: Middleware software: 01110000 (8e67f94599000000)
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756047.780792272] [uav1.mavros.sys]: VER: 2.1: OS software:         07000aff (fb2fadf6f599c140)
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756047.780795175] [uav1.mavros.sys]: VER: 2.1: Board hardware:      00000001
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756047.780797779] [uav1.mavros.sys]: VER: 2.1: VID/PID:             0000:0000
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756047.780800322] [uav1.mavros.sys]: VER: 2.1: UID:                 4954414c44494e50
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756047.780825750] [uav1.mavros.cmd]: CMD: Unexpected command 520, result 0
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756048.305873967] [uav1.mavros.sys]: FCU: UNK(8): EVENT 11047904 with args -0-0-0-18-1-128-0-0-0-128-58-1-128-128-58-1-128-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [ERROR] [1779756048.305921207] [uav1.mavros.sys]: FCU: EVENT 13835193 with args -124-0-126-0-17-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [ERROR] [1779756048.306004632] [uav1.mavros.sys]: FCU: EVENT 10011251 with args -56-0-0-0-24-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756048.306025324] [uav1.mavros.sys]: FCU: EVENT 377561 with args -8-0-0-0-20-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [ERROR] [1779756048.306074163] [uav1.mavros.sys]: FCU: EVENT 3087815 with args -0-64-0-0-20-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756048.306094237] [uav1.mavros.sys]: FCU: EVENT 453929 with args -255-255-255-255-7-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756048.306143535] [uav1.mavros.sys]: FCU: EVENT 6801787 with args -255-255-255-255-12-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756048.306158401] [uav1.mavros.sys]: FCU: UNK(8): EVENT 1914663 with args -0-10-13-2-56-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [sitl_uav_1-1] pxh> INFO  [commander] Ready for takeoff!
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756050.301259663] [uav1.mavros.sys]: FCU: UNK(8): EVENT 11047904 with args -0-0-0-16-0-128-0-0-0-176-58-127-128-176-58-127-128-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756050.301356613] [uav1.mavros.sys]: FCU: EVENT 377561 with args -8-0-0-0-20-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [ERROR] [1779756050.301384871] [uav1.mavros.sys]: FCU: EVENT 3087815 with args -0-64-0-0-20-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756050.301475824] [uav1.mavros.sys]: FCU: EVENT 453929 with args -255-255-255-255-7-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756050.301489725] [uav1.mavros.sys]: FCU: EVENT 6801787 with args -255-255-255-255-12-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756050.301501674] [uav1.mavros.sys]: FCU: UNK(8): EVENT 1914663 with args -0-10-13-2-56-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-
+dict_items([('fcu_url', '/dev/pixhawk:2000000'), ('gcs_url', 'tcp-l://'), ('tgt_system', '1'), ('tgt_component', '1'), ('log_output', 'screen'), ('fcu_protocol', 'v2.0'), ('respawn_mavros', 'False'), ('namespace', 'mavros'), ('pluginlists_yaml', '/opt/ros/jazzy/share/mrs_uav_px4_api/config/mavros_plugins.yaml'), ('config_yaml', '/opt/ros/jazzy/share/mrs_uav_px4_api/config/mavros_px4_config.yaml')])
+[INFO] [component_container_mt-5]: process started with pid [519518]
+[INFO] [static_transform_publisher-6]: process started with pid [519519]
+[INFO] [component_container_mt-7]: process started with pid [519520]
+[INFO] [static_transform_publisher-8]: process started with pid [519521]
+[static_transform_publisher-6] [WARN] [1779756058.515221480] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-8] [WARN] [1779756058.515233903] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-6] [INFO] [1779756058.541738975] [fcu_to_garmin]: Spinning until stopped - publishing transform
+[static_transform_publisher-6] translation: ('0.000000', '0.062500', '-0.009000')
+[static_transform_publisher-6] rotation: ('-0.500000', '0.500000', '0.500002', '0.499998')
+[static_transform_publisher-6] from 'uav1/fcu' to 'uav1/garmin'
+[static_transform_publisher-8] [INFO] [1779756058.543981722] [fcu_to_rtk_antenna]: Spinning until stopped - publishing transform
+[static_transform_publisher-8] translation: ('0.000000', '0.000000', '0.200000')
+[static_transform_publisher-8] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-8] from 'uav1/fcu' to 'uav1/rtk_antenna'
+[component_container_mt-7] [INFO] [1779756058.891498222] [uav1.uav_core_container]: Load Library: /opt/ros/jazzy/lib/libMrsUavManagers_SafetyAreaManager.so
+[component_container_mt-7] [INFO] [1779756058.897710580] [uav1.uav_core_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::safety_area_manager::SafetyAreaManager>
+[component_container_mt-7] [INFO] [1779756058.897750859] [uav1.uav_core_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::safety_area_manager::SafetyAreaManager>
+[component_container_mt-7] 	uav_name:	uav1
+[component_container_mt-7] [INFO] [1779756058.924028692] [uav1.safety_area_manager]: Subscribed to topic '~/hw_api_capabilities_in' -> '/uav1/hw_api/capabilities'
+[component_container_mt-7] [INFO] [1779756058.924954713] [uav1.safety_area_manager]: Subscribed to topic '~/gnss_in' -> '/uav1/hw_api/gnss'
+[component_container_mt-7] [INFO] [1779756058.925923875] [uav1.safety_area_manager]: Subscribed to topic '~/control_manager_diagnostics_in' -> '/uav1/control_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756058.926611442] [uav1.uav_core_container]: Load Library: /opt/ros/jazzy/lib/libMrsUavManagers_ControlManager.so
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/uav1/safety_area_manager' in container '/uav1/uav_core_container'
+[component_container_mt-7] [INFO] [1779756058.933227512] [uav1.uav_core_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::control_manager::ControlManager>
+[component_container_mt-7] [INFO] [1779756058.933287910] [uav1.uav_core_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::control_manager::ControlManager>
+[component_container_mt-7] [INFO] [1779756058.954392861] [uav1.control_manager]: Subscribed to topic '~/hw_api_capabilities_in' -> '/uav1/hw_api/capabilities'
+[component_container_mt-7] [INFO] [1779756058.954849701] [uav1.uav_core_container]: Load Library: /opt/ros/jazzy/lib/libMrsUavStatus_Acquisition.so
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/uav1/control_manager' in container '/uav1/uav_core_container'
+[component_container_mt-7] [INFO] [1779756058.958942266] [uav1.uav_core_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrs_uav_status::Acquisition>
+[component_container_mt-7] [INFO] [1779756058.959001322] [uav1.uav_core_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrs_uav_status::Acquisition>
+[component_container_mt-5] [INFO] [1779756058.971856561] [uav1.uav1_container]: Load Library: /opt/ros/jazzy/lib/libMrsUavHwApi_HwApiManager.so
+[component_container_mt-7] [INFO] [1779756058.975945153] [uav1.uav_status_acquisition]: initializing
+[component_container_mt-7] [INFO] [1779756058.975996845] [uav1.uav_status_acquisition]: Intra-process comms is: ON
+[component_container_mt-7] 	custom_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/spawner.yaml
+[component_container_mt-7] 	platform_config:	
+[component_container_mt-7] 	config_public:	/opt/ros/jazzy/share/mrs_uav_status/config/public/default.yaml
+[component_container_mt-7] 	uav_name:	uav1
+[component_container_mt-7] 	uav_type:	imav_x500
+[component_container_mt-7] 	mrs_uav_status/turbo_remote_constraints:	fast
+[component_container_mt-7] 	mrs_uav_status/enable_profiler:	0
+[component_container_mt-7] 	mrs_uav_status/want_hz:	
+[component_container_mt-7] 	mrs_uav_status/tf_static_list:	bluefox_down bluefox_down/camera_info BFox Down 20, bluefox_front bluefox_front/camera_info BFox Front 20, bluefox_optflow bluefox_optflow/camera_info BFox Optflow 50, bluefox_optflow_optical bluefox_optflow/camera_info BFox Optflow 50, bluefox_optflow optic_flow/velocity Optflow Vel 50, bluefox_optflow_optical optic_flow/velocity Optflow Vel 50, rs_d435/link rs_d435/color/camera_info Realsense 30, rplidar rplidar/scan RPlidar 10, os_sensor os_cloud_nodelet/is_alive Ouster 10, uvcam_left uvdar_bluefox/left/camera_info UV_BFox_Left 60, uvcam_right uvdar_bluefox/right/camera_info UV_BFox_Right 60, uvcam_back uvdar_bluefox/back/camera_info UV_BFox_Back 60, basler_left basler_left/camera_info Basler Left 5, basler_right basler_right/camera_info Basler Right 5, up_rgbd/link up_rgbd/color/camera_info RS Up 20+, down_rgbd/link down_rgbd/color/camera_info RS Down 20+, rgbd/link rgbd/color/camera_info RS 20+
+[component_container_mt-7] [INFO] [1779756058.980337315] [uav1.uav_status_acquisition]: Subscribed to topic '~/uav_state_in' -> '/uav1/estimation_manager/uav_state'
+[component_container_mt-7] [INFO] [1779756058.984872921] [uav1.uav_status_acquisition]: Subscribed to topic '~/cmd_tracker_in' -> '/uav1/control_manager/tracker_cmd'
+[component_container_mt-5] [INFO] [1779756058.984946420] [uav1.uav1_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrs_uav_hw_api::HwApiManager>
+[component_container_mt-5] [INFO] [1779756058.984989340] [uav1.uav1_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrs_uav_hw_api::HwApiManager>
+[component_container_mt-7] [INFO] [1779756058.986757925] [uav1.uav_status_acquisition]: Subscribed to topic '~/estimation_diag_in' -> '/uav1/estimation_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756058.987602929] [uav1.uav_status_acquisition]: Subscribed to topic '~/mpc_diag_in' -> '/uav1/control_manager/mpc_tracker/diagnostics'
+[component_container_mt-7] [INFO] [1779756058.990239649] [uav1.uav_status_acquisition]: Subscribed to topic '~/hw_api_status_in' -> '/uav1/hw_api/status'
+[component_container_mt-7] [INFO] [1779756058.992109649] [uav1.uav_status_acquisition]: Subscribed to topic '~/gnss_in' -> '/uav1/hw_api/gnss'
+[component_container_mt-7] [INFO] [1779756058.994670323] [uav1.uav_status_acquisition]: Subscribed to topic '~/throttle_in' -> '/uav1/control_manager/throttle'
+[component_container_mt-7] [INFO] [1779756058.996442896] [uav1.uav_status_acquisition]: Subscribed to topic '~/mass_estimate_in' -> '/uav1/control_manager/mass_estimate'
+[component_container_mt-7] [INFO] [1779756058.997438536] [uav1.uav_status_acquisition]: Subscribed to topic '~/mass_set_in' -> '/uav1/control_manager/mass_nominal'
+[component_container_mt-7] [INFO] [1779756058.998758881] [uav1.uav_status_acquisition]: Subscribed to topic '~/gnss_status_in' -> '/uav1/hw_api/gnss_status'
+[component_container_mt-7] [INFO] [1779756058.999937401] [uav1.uav_status_acquisition]: Subscribed to topic '~/battery_in' -> '/uav1/hw_api/battery_state'
+[component_container_mt-7] [INFO] [1779756059.000567211] [uav1.uav_status_acquisition]: Subscribed to topic '~/control_manager_in' -> '/uav1/control_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756059.003684867] [uav1.uav_status_acquisition]: Subscribed to topic '~/gain_manager_in' -> '/uav1/gain_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756059.006292136] [uav1.uav_status_acquisition]: Subscribed to topic '~/constraint_manager_in' -> '/uav1/constraint_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756059.009021412] [uav1.uav_status_acquisition]: Subscribed to topic '~/string_in' -> '/uav1/uav_status_acquisition/display_string'
+[component_container_mt-7] [INFO] [1779756059.009953472] [uav1.uav_status_acquisition]: Subscribed to topic '~/tf_static_in' -> '/tf_static'
+[component_container_mt-7] [INFO] [1779756059.015405746] [uav1.uav_status_acquisition]: Subscribed to topic '~/odometry_in' -> '/uav1/hw_api/odometry'
+[component_container_mt-7] [INFO] [1779756059.017261531] [uav1.uav_status_acquisition]: Subscribed to topic '~/automatic_start_in' -> '/uav1/automatic_start/can_takeoff'
+[component_container_mt-7] [INFO] [1779756059.018488489] [uav1.uav_status_acquisition]: Subscribed to topic '~/mag_in' -> '/uav1/hw_api/magnetic_field'
+[component_container_mt-7] [INFO] [1779756059.021400194] [uav1.uav_status_acquisition]:  Created publisher on topic '~/uav_status_out' -> '/uav1/uav_status_acquisition/uav_status'
+[component_container_mt-5] 	configs:	/opt/ros/jazzy/share/mrs_uav_px4_api/config/px4_api.yaml, /opt/ros/jazzy/share/mrs_uav_hw_api/config/hw_api.yaml
+[component_container_mt-5] [INFO] [1779756059.022048789] [uav1.hw_api]: loading config file '/opt/ros/jazzy/share/mrs_uav_px4_api/config/px4_api.yaml'
+[component_container_mt-7] [INFO] [1779756059.022453987] [uav1.uav_status_acquisition]:  Created publisher on topic '~/uav_status_short_out' -> '/uav1/uav_status_acquisition/uav_status_short'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/uav1/uav_status_acquisition' in container '/uav1/uav_core_container'
+[component_container_mt-7] [INFO] [1779756059.022488920] [uav1.uav_status_acquisition]: profiler initialized
+[component_container_mt-7] [INFO] [1779756059.022615143] [uav1.uav_status_acquisition]: [AcquisitionAcquisition]: Node initialized!
+[component_container_mt-5] [INFO] [1779756059.022573976] [uav1.hw_api]: loading config file '/opt/ros/jazzy/share/mrs_uav_hw_api/config/hw_api.yaml'
+[component_container_mt-5] 	version:	2.0.0.0
+[component_container_mt-5] 	hw_interface_plugin:	mrs_uav_px4_api::MrsUavPx4Api
+[component_container_mt-5] 	uav_name:	uav1
+[component_container_mt-5] 	body_frame_name:	fcu
+[component_container_mt-5] 	world_frame_name:	hw_api_world
+[component_container_mt-5] 	topic_prefix:	/uav1
+[component_container_mt-5] 	timers/diagnostics/rate:	1
+[component_container_mt-5] 	timers/mode/rate:	1
+[component_container_mt-5] 	publish_rate/gnss:	50
+[component_container_mt-5] 	publish_rate/gnss_status:	10
+[component_container_mt-5] 	publish_rate/rtk:	50
+[component_container_mt-5] 	publish_rate/imu:	500
+[component_container_mt-5] 	publish_rate/distance_sensor:	250
+[component_container_mt-5] 	publish_rate/altitude:	100
+[component_container_mt-5] 	publish_rate/mag_heading:	100
+[component_container_mt-5] 	publish_rate/mag_magnetic_field:	100
+[component_container_mt-5] 	publish_rate/rc_channels:	100
+[component_container_mt-5] 	publish_rate/battery_state:	100
+[component_container_mt-5] 	publish_rate/position:	250
+[component_container_mt-5] 	publish_rate/velocity:	250
+[component_container_mt-5] 	publish_rate/orientation:	250
+[component_container_mt-5] 	publish_rate/angular_velocity:	500
+[component_container_mt-5] 	publish_rate/odometry:	250
+[component_container_mt-5] 	publish_rate/ground_truth:	250
+[component_container_mt-7] [INFO] [1779756059.023834294] [uav1.uav_core_container]: Load Library: /opt/ros/jazzy/lib/libMrsUavTrajectoryGeneration_MrsTrajectoryGeneration.so
+[component_container_mt-7] [INFO] [1779756059.027748480] [uav1.uav_core_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrs_uav_trajectory_generation::MrsTrajectoryGeneration>
+[component_container_mt-7] [INFO] [1779756059.027809468] [uav1.uav_core_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrs_uav_trajectory_generation::MrsTrajectoryGeneration>
+[component_container_mt-5] [INFO] [1779756059.036519903] [uav1.hw_api]: Subscribed to topic '~/actuator_cmd' -> '/uav1/hw_api/actuator_cmd'
+[component_container_mt-5] [INFO] [1779756059.039904443] [uav1.hw_api]: Subscribed to topic '~/control_group_cmd' -> '/uav1/hw_api/control_group_cmd'
+[component_container_mt-5] [INFO] [1779756059.042485061] [uav1.hw_api]: Subscribed to topic '~/attitude_cmd' -> '/uav1/hw_api/attitude_cmd'
+[component_container_mt-5] [INFO] [1779756059.043985304] [uav1.hw_api]: Subscribed to topic '~/attitude_rate_cmd' -> '/uav1/hw_api/attitude_rate_cmd'
+[component_container_mt-5] [INFO] [1779756059.048344483] [uav1.hw_api]: Subscribed to topic '~/acceleration_hdg_rate_cmd' -> '/uav1/hw_api/acceleration_hdg_rate_cmd'
+[component_container_mt-5] [INFO] [1779756059.049851654] [uav1.hw_api]: Subscribed to topic '~/acceleration_hdg_cmd' -> '/uav1/hw_api/acceleration_hdg_cmd'
+[component_container_mt-5] [INFO] [1779756059.051313009] [uav1.hw_api]: Subscribed to topic '~/velocity_hdg_rate_cmd' -> '/uav1/hw_api/velocity_hdg_rate_cmd'
+[component_container_mt-5] [INFO] [1779756059.053805767] [uav1.hw_api]: Subscribed to topic '~/velocity_hdg_cmd' -> '/uav1/hw_api/velocity_hdg_cmd'
+[component_container_mt-5] [INFO] [1779756059.056115687] [uav1.hw_api]: Subscribed to topic '~/position_cmd' -> '/uav1/hw_api/position_cmd'
+[component_container_mt-5] [INFO] [1779756059.059632446] [uav1.hw_api]: Subscribed to topic '/uav1/control_manager/tracker_cmd' -> '/uav1/control_manager/tracker_cmd'
+[component_container_mt-5] [INFO] [1779756059.062055732] [uav1.hw_api]:  Created publisher on topic '~/capabilities' -> '/uav1/hw_api/capabilities'
+[component_container_mt-5] [INFO] [1779756059.063952324] [uav1.hw_api]:  Created publisher on topic '~/status' -> '/uav1/hw_api/status'
+[component_container_mt-5] [INFO] [1779756059.066871654] [uav1.hw_api]:  Created publisher on topic '~/connected' -> '/uav1/hw_api/connected'
+[component_container_mt-5] [INFO] [1779756059.068669714] [uav1.hw_api]:  Created publisher on topic '~/gnss' -> '/uav1/hw_api/gnss'
+[component_container_mt-7] [INFO] [1779756059.070305997] [uav1.trajectory_generation]: initializing
+[component_container_mt-7] [INFO] [1779756059.070361524] [uav1.trajectory_generation]: Intra-process comms is: ON
+[component_container_mt-5] [INFO] [1779756059.072071879] [uav1.hw_api]:  Created publisher on topic '~/gnss_status' -> '/uav1/hw_api/gnss_status'
+[component_container_mt-7] [INFO] [1779756059.073881790] [uav1.trajectory_generation]:  Created publisher on topic '~/original_path_out' -> '/uav1/trajectory_generation/original_path'
+[component_container_mt-5] [INFO] [1779756059.074517649] [uav1.hw_api]:  Created publisher on topic '~/rtk' -> '/uav1/hw_api/rtk'
+[component_container_mt-7] [INFO] [1779756059.075447086] [uav1.trajectory_generation]: Subscribed to topic '~/constraints_in' -> '/uav1/control_manager/current_constraints'
+[component_container_mt-5] [INFO] [1779756059.076780345] [uav1.hw_api]:  Created publisher on topic '~/distance_sensor' -> '/uav1/hw_api/distance_sensor'
+[component_container_mt-7] [INFO] [1779756059.077794098] [uav1.trajectory_generation]: Subscribed to topic '~/tracker_cmd_in' -> '/uav1/control_manager/tracker_cmd'
+[component_container_mt-7] [INFO] [1779756059.078958425] [uav1.uav_status_acquisition]: timerStatus(): spinning
+[component_container_mt-5] [INFO] [1779756059.079102418] [uav1.hw_api]:  Created publisher on topic '~/mag_heading' -> '/uav1/hw_api/mag_heading'
+[component_container_mt-7] [INFO] [1779756059.079845392] [uav1.trajectory_generation]: Subscribed to topic '~/uav_state_in' -> '/uav1/estimation_manager/uav_state'
+[component_container_mt-5] [INFO] [1779756059.082358873] [uav1.hw_api]:  Created publisher on topic '~/magnetic_field' -> '/uav1/hw_api/magnetic_field'
+[component_container_mt-7] [INFO] [1779756059.082419639] [uav1.trajectory_generation]: Subscribed to topic '~/control_manager_diag_in' -> '/uav1/control_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756059.083484314] [uav1.trajectory_generation]: Subscribed to topic '~/path_in' -> '/uav1/trajectory_generation/path'
+[component_container_mt-5] [INFO] [1779756059.083767776] [uav1.hw_api]:  Created publisher on topic '~/altitude' -> '/uav1/hw_api/altitude'
+[component_container_mt-5] [INFO] [1779756059.086634635] [uav1.hw_api]:  Created publisher on topic '~/imu' -> '/uav1/hw_api/imu'
+[component_container_mt-7] [INFO] [1779756059.086772113] [uav1.trajectory_generation]: Created service: /uav1/trajectory_generation/path
+[component_container_mt-5] [INFO] [1779756059.089308467] [uav1.hw_api]:  Created publisher on topic '~/rc_channels' -> '/uav1/hw_api/rc_channels'
+[component_container_mt-7] [INFO] [1779756059.090832598] [uav1.trajectory_generation]: Created service: /uav1/trajectory_generation/get_path
+[component_container_mt-5] [INFO] [1779756059.091513699] [uav1.hw_api]:  Created publisher on topic '~/rc_rssi' -> '/uav1/hw_api/rc_rssi'
+[component_container_mt-5] [INFO] [1779756059.094068645] [uav1.hw_api]:  Created publisher on topic '~/battery_state' -> '/uav1/hw_api/battery_state'
+[component_container_mt-7] [INFO] [1779756059.095287754] [uav1.trajectory_generation]: Created client '~/trajectory_reference_out' -> '/uav1/control_manager/trajectory_reference'
+[component_container_mt-5] [INFO] [1779756059.095301754] [uav1.hw_api]:  Created publisher on topic '~/position' -> '/uav1/hw_api/position'
+[component_container_mt-7] 	custom_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/spawner.yaml
+[component_container_mt-7] 	platform_config:	
+[component_container_mt-7] 	uav_manager_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/public/uav_manager.yaml
+[component_container_mt-5] [INFO] [1779756059.097137975] [uav1.hw_api]:  Created publisher on topic '~/orientation' -> '/uav1/hw_api/orientation'
+[component_container_mt-7] 	private_config:	/opt/ros/jazzy/share/mrs_uav_trajectory_generation/config/private/trajectory_generation.yaml
+[component_container_mt-7] 	public_config:	/opt/ros/jazzy/share/mrs_uav_trajectory_generation/config/public/trajectory_generation.yaml
+[component_container_mt-7] 	uav_name:	uav1
+[component_container_mt-5] [INFO] [1779756059.099917159] [uav1.hw_api]:  Created publisher on topic '~/velocity' -> '/uav1/hw_api/velocity'
+[component_container_mt-7] 	mrs_uav_trajectory_generation/sampling_dt:	0.2
+[component_container_mt-7] 	mrs_uav_trajectory_generation/max_trajectory_len_factor:	3
+[component_container_mt-7] 	mrs_uav_trajectory_generation/min_trajectory_len_factor:	0.33
+[component_container_mt-7] 	mrs_uav_trajectory_generation/n_attempts:	3
+[component_container_mt-7] 	mrs_uav_trajectory_generation/fallback_sampling/enabled:	1
+[component_container_mt-7] 	mrs_uav_trajectory_generation/fallback_sampling/speed_factor:	1
+[component_container_mt-7] 	mrs_uav_trajectory_generation/fallback_sampling/accel_factor:	1
+[component_container_mt-7] 	mrs_uav_trajectory_generation/fallback_sampling/stopping_time:	2
+[component_container_mt-7] 	mrs_uav_trajectory_generation/fallback_sampling/first_waypoint_additional_stop:	0
+[component_container_mt-7] 	mrs_uav_trajectory_generation/check_trajectory_deviation/enabled:	1
+[component_container_mt-7] [INFO] [1779756059.101559877] [uav1.trajectory_generation]: [trajectory_generation]: Dynamic parameter 'mrs_uav_trajectory_generation/enforce_fallback_solver':	0
+[component_container_mt-7] [INFO] [1779756059.101980034] [uav1.trajectory_generation]: [trajectory_generation]: Dynamic parameter 'mrs_uav_trajectory_generation/check_trajectory_deviation/max_deviation':	0.05
+[component_container_mt-7] 	mrs_uav_trajectory_generation/check_trajectory_deviation/max_iterations:	6
+[component_container_mt-7] 	mrs_uav_trajectory_generation/path_straightener/enabled:	0
+[component_container_mt-7] 	mrs_uav_trajectory_generation/path_straightener/max_deviation:	0.05
+[component_container_mt-7] 	mrs_uav_trajectory_generation/path_straightener/max_hdg_deviation:	0.1
+[component_container_mt-7] 	mrs_uav_trajectory_generation/override_heading_atan2:	0
+[component_container_mt-7] 	mrs_uav_trajectory_generation/min_waypoint_distance:	0.05
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/takeoff/takeoff_height:	1.5
+[component_container_mt-7] 	mrs_uav_trajectory_generation/scope_timer/enabled:	0
+[component_container_mt-7] 	mrs_uav_trajectory_generation/scope_timer/log_filename:	
+[component_container_mt-7] 	mrs_uav_trajectory_generation/time_penalty:	100
+[component_container_mt-7] 	mrs_uav_trajectory_generation/soft_constraints_enabled:	1
+[component_container_mt-7] 	mrs_uav_trajectory_generation/soft_constraints_weight:	1.5
+[component_container_mt-7] 	mrs_uav_trajectory_generation/time_allocation:	2
+[component_container_mt-7] 	mrs_uav_trajectory_generation/equality_constraint_tolerance:	0.001
+[component_container_mt-7] 	mrs_uav_trajectory_generation/inequality_constraint_tolerance:	0.1
+[component_container_mt-7] 	mrs_uav_trajectory_generation/max_iterations:	10
+[component_container_mt-7] 	mrs_uav_trajectory_generation/derivative_to_optimize:	0
+[component_container_mt-7] [INFO] [1779756059.102291802] [uav1.trajectory_generation]: [trajectory_generation]: Dynamic parameter 'mrs_uav_trajectory_generation/max_time':	0.5
+[component_container_mt-5] [INFO] [1779756059.103024006] [uav1.hw_api]:  Created publisher on topic '~/angular_velocity' -> '/uav1/hw_api/angular_velocity'
+[component_container_mt-5] [INFO] [1779756059.109138020] [uav1.hw_api]:  Created publisher on topic '~/odometry' -> '/uav1/hw_api/odometry'
+[component_container_mt-5] [INFO] [1779756059.110830080] [uav1.hw_api]:  Created publisher on topic '~/ground_truth' -> '/uav1/hw_api/ground_truth'
+[component_container_mt-7] [INFO] [1779756059.111161315] [uav1.trajectory_generation]: [trajectory_generation]: Batch visualizer loaded with default values
+[component_container_mt-5] [INFO] [1779756059.113155297] [uav1.hw_api]: Created service: /uav1/hw_api/arming
+[component_container_mt-5] [INFO] [1779756059.117155394] [uav1.hw_api]: Created service: /uav1/hw_api/offboard
+[component_container_mt-7] [INFO] [1779756059.118425310] [uav1.trajectory_generation]: [trajectory_generation]: Batch visualizer loaded with default values
+[component_container_mt-5] [INFO] [1779756059.118639998] [uav1.hw_api]: loading the plugin 'mrs_uav_px4_api::MrsUavPx4Api'
+[component_container_mt-7] [INFO] [1779756059.120860302] [uav1.trajectory_generation]: initialized
+[component_container_mt-7] [INFO] [1779756059.122262227] [uav1.uav_core_container]: Load Library: /opt/ros/jazzy/lib/libMrsUavManagers_UavManager.so
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/uav1/trajectory_generation' in container '/uav1/uav_core_container'
+[component_container_mt-5] 	configs:	/opt/ros/jazzy/share/mrs_uav_px4_api/config/px4_api.yaml, /opt/ros/jazzy/share/mrs_uav_hw_api/config/hw_api.yaml
+[component_container_mt-7] [INFO] [1779756059.127576725] [uav1.uav_core_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::uav_manager::UavManager>
+[component_container_mt-7] [INFO] [1779756059.129046452] [uav1.uav_core_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::uav_manager::UavManager>
+[component_container_mt-5] 	simulation:	1
+[component_container_mt-5] [INFO] [1779756059.129933082] [uav1.hw_api]: loading config file '/opt/ros/jazzy/share/mrs_uav_px4_api/config/px4_api.yaml'
+[component_container_mt-5] [INFO] [1779756059.130286838] [uav1.hw_api]: loading config file '/opt/ros/jazzy/share/mrs_uav_hw_api/config/hw_api.yaml'
+[component_container_mt-5] 	plugin/mavros_timeout:	1
+[component_container_mt-5] 	plugin/mavros_passable_delay:	0.05
+[component_container_mt-5] 	plugin/gnss/utm_x:	465711
+[component_container_mt-5] 	plugin/gnss/utm_y:	5.24947e+06
+[component_container_mt-5] 	plugin/gnss/utm_zone:	32T
+[component_container_mt-5] 	plugin/gnss/amsl:	340
+[component_container_mt-5] 	plugin/input_mode/control_group:	0
+[component_container_mt-5] 	plugin/input_mode/attitude_rate:	1
+[component_container_mt-5] 	plugin/input_mode/attitude:	1
+[component_container_mt-5] 	plugin/outputs/distance_sensor:	1
+[component_container_mt-5] 	plugin/outputs/gnss:	1
+[component_container_mt-5] 	plugin/outputs/gnss_status:	1
+[component_container_mt-5] 	plugin/outputs/rtk:	0
+[component_container_mt-5] 	plugin/outputs/ground_truth:	1
+[component_container_mt-5] 	plugin/outputs/imu:	1
+[component_container_mt-5] 	plugin/outputs/altitude:	1
+[component_container_mt-5] 	plugin/outputs/magnetometer_heading:	1
+[component_container_mt-5] 	plugin/outputs/magnetic_field:	1
+[component_container_mt-5] 	plugin/outputs/rc_channels:	1
+[component_container_mt-5] 	plugin/outputs/rc_rssi:	1
+[component_container_mt-5] 	plugin/outputs/battery_state:	1
+[component_container_mt-5] 	plugin/outputs/position:	1
+[component_container_mt-5] 	plugin/outputs/orientation:	1
+[component_container_mt-5] 	plugin/outputs/velocity:	1
+[component_container_mt-5] 	plugin/outputs/angular_velocity:	1
+[component_container_mt-5] 	plugin/outputs/odometry:	1
+[component_container_mt-5] [INFO] [1779756059.138560053] [uav1.hw_api]: Created client '~/mavros_cmd_out' -> '/uav1/mavros/cmd/command'
+[component_container_mt-5] [INFO] [1779756059.142489986] [uav1.hw_api]: Created client '~/mavros_set_mode_out' -> '/uav1/mavros/set_mode'
+[component_container_mt-5] [INFO] [1779756059.145192632] [uav1.hw_api]: Created service: /uav1/hw_api/ignore_ground_truth_in
+[component_container_mt-5] [INFO] [1779756059.148453895] [uav1.hw_api]: Subscribed to topic '~/ground_truth_in' -> '/uav1/ground_truth'
+[component_container_mt-5] [INFO] [1779756059.157151425] [uav1.hw_api]: Subscribed to topic '~/mavros_state_in' -> '/uav1/mavros/state'
+[component_container_mt-5] [INFO] [1779756059.158611919] [uav1.hw_api]: Subscribed to topic '~/mavros_local_position_in' -> '/uav1/mavros/local_position/odom'
+[component_container_mt-5] [INFO] [1779756059.159860531] [uav1.hw_api]: Subscribed to topic '~/mavros_odometry_in' -> '/uav1/mavros/odometry/in'
+[component_container_mt-5] [INFO] [1779756059.161437720] [uav1.hw_api]: Subscribed to topic '~/mavros_global_position_in' -> '/uav1/mavros/global_position/global'
+[component_container_mt-5] [INFO] [1779756059.163817463] [uav1.hw_api]: Subscribed to topic '~/mavros_garmin_in' -> '/uav1/mavros/garmin'
+[component_container_mt-5] [INFO] [1779756059.166173228] [uav1.hw_api]: Subscribed to topic '~/mavros_imu_in' -> '/uav1/mavros/imu/data'
+[component_container_mt-5] [INFO] [1779756059.170317206] [uav1.hw_api]: Subscribed to topic '~/mavros_magnetometer_in' -> '/uav1/mavros/global_position/compass_hdg'
+[component_container_mt-5] [INFO] [1779756059.173066070] [uav1.hw_api]: Subscribed to topic '~/mavros_magnetic_field_in' -> '/uav1/mavros/imu/mag'
+[component_container_mt-5] [INFO] [1779756059.174696306] [uav1.hw_api]: Subscribed to topic '~/mavros_altitude_in' -> '/uav1/mavros/altitude'
+[component_container_mt-7] [INFO] [1779756059.175096867] [uav1.uav_manager]: Subscribed to topic '~/hw_api_capabilities_in' -> '/uav1/hw_api/capabilities'
+[component_container_mt-5] [INFO] [1779756059.178616351] [uav1.hw_api]: Subscribed to topic '~/mavros_gps_status_raw_in' -> '/uav1/mavros/gpsstatus/gps1/raw'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/uav1/uav_manager' in container '/uav1/uav_core_container'
+[component_container_mt-7] [INFO] [1779756059.179726216] [uav1.uav_core_container]: Load Library: /opt/ros/jazzy/lib/libMrsUavManagers_GainManager.so
+[component_container_mt-5] [INFO] [1779756059.181082583] [uav1.hw_api]: Subscribed to topic '~/mavros_rc_in' -> '/uav1/mavros/rc/in'
+[component_container_mt-7] [INFO] [1779756059.181312843] [uav1.uav_core_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::gain_manager::GainManager>
+[component_container_mt-7] [INFO] [1779756059.181347852] [uav1.uav_core_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::gain_manager::GainManager>
+[component_container_mt-5] [INFO] [1779756059.182834035] [uav1.hw_api]: Subscribed to topic '~/mavros_battery_in' -> '/uav1/mavros/battery'
+[component_container_mt-5] [INFO] [1779756059.185313166] [uav1.hw_api]:  Created publisher on topic '~/mavros_attitude_setpoint_out' -> '/uav1/mavros/setpoint_raw/attitude'
+[component_container_mt-5] [INFO] [1779756059.187949456] [uav1.hw_api]:  Created publisher on topic '~/mavros_actuator_control_out' -> '/uav1/mavros/actuator_control'
+[component_container_mt-5] [INFO] [1779756059.188170006] [uav1.hw_api]: initialized
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/uav1/hw_api' in container '/uav1/uav1_container'
+[component_container_mt-5] [INFO] [1779756059.188246381] [uav1.hw_api]: initialized
+[component_container_mt-5] [INFO] [1779756059.189108832] [uav1.hw_api]: getting IMU
+[component_container_mt-5] [INFO] [1779756059.191231574] [uav1.hw_api]: getting magnetometer heading
+[component_container_mt-5] [INFO] [1779756059.191645885] [uav1.hw_api]: getting distnace sensor
+[component_container_mt-5] [INFO] [1779756059.191883459] [uav1.hw_api]: getting NavSat fix
+[component_container_mt-5] [INFO] [1779756059.192266932] [uav1.hw_api]: getting Mavros's local odometry
+[component_container_mt-5] [INFO] [1779756059.192486304] [uav1.hw_api]: getting Mavros state
+[component_container_mt-5] [INFO] [1779756059.192547146] [uav1.hw_api]: getting Mavros's odometry in
+[component_container_mt-5] [INFO] [1779756059.192583574] [uav1.hw_api]: getting ground truth
+[component_container_mt-5] [INFO] [1779756059.192590655] [uav1.hw_api]: transforming Gazebo ground truth velocities from world to body frame
+[component_container_mt-7] [INFO] [1779756059.216525934] [uav1.gain_manager]: initializing
+[component_container_mt-7] [INFO] [1779756059.216568990] [uav1.gain_manager]: Intra-process comms is: ON
+[component_container_mt-7] 	custom_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/spawner.yaml
+[component_container_mt-7] 	platform_config:	
+[component_container_mt-7] 	private_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/private/gain_manager/gain_manager.yaml
+[component_container_mt-7] 	public_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/public/gain_manager/gain_manager.yaml
+[component_container_mt-7] 	public_gains:	/opt/ros/jazzy/share/mrs_uav_managers/config/public/gain_manager/gains.yaml
+[component_container_mt-7] 	enable_profiler:	0
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/gains:	supersoft, soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/estimator_types:	gps_garmin, gps_baro, rtk, rtk_garmin, other, ground_truth, passthrough, f9p, dummy
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/rate:	10
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/diagnostics_rate:	1
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/scope_timer/enabled:	0
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/scope_timer/log_filename:	
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/horizontal/kp:	3
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/horizontal/kv:	2
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/horizontal/ka:	1
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/horizontal/kib:	0.1
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/horizontal/kiw:	0.1
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/horizontal/kib_lim:	10
+[component_container_mt-7] [INFO] [1779756059.221813064] [uav1.gain_manager]: loading gains 'supersoft'
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/horizontal/kiw_lim:	10
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/vertical/kp:	15
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/vertical/kv:	8
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/vertical/ka:	1
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/attitude/kq_roll_pitch:	5
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/attitude/kq_yaw:	5
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/mass_estimator/km:	0.5
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/supersoft/mass_estimator/km_lim:	20
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/horizontal/kp:	6
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/horizontal/kv:	3
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/horizontal/ka:	1
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/horizontal/kib:	0.1
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/horizontal/kiw:	0.1
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/horizontal/kib_lim:	10
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/horizontal/kiw_lim:	10
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/vertical/kp:	15
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/vertical/kv:	8
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/vertical/ka:	1
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/attitude/kq_roll_pitch:	5
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/attitude/kq_yaw:	5
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/mass_estimator/km:	0.5
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/soft/mass_estimator/km_lim:	20
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/allowed_gains/gps_garmin:	supersoft, soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/allowed_gains/gps_baro:	supersoft, soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/allowed_gains/rtk:	supersoft, soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/allowed_gains/rtk_garmin:	supersoft, soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/allowed_gains/other:	supersoft, soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/allowed_gains/ground_truth:	supersoft, soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/allowed_gains/passthrough:	supersoft, soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/allowed_gains/f9p:	supersoft, soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/allowed_gains/dummy:	supersoft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/default_gains/gps_garmin:	soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/default_gains/gps_baro:	soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/default_gains/rtk:	soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/default_gains/rtk_garmin:	soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/default_gains/other:	supersoft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/default_gains/ground_truth:	soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/default_gains/passthrough:	soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/default_gains/f9p:	soft
+[component_container_mt-7] 	mrs_uav_managers/gain_manager/default_gains/dummy:	supersoft
+[component_container_mt-7] [INFO] [1779756059.222100960] [uav1.gain_manager]: loading gains 'soft'
+[component_container_mt-7] [INFO] [1779756059.222564341] [uav1.gain_manager]: done loading dynamical params
+[component_container_mt-7] [INFO] [1779756059.225665123] [uav1.gain_manager]: Created service: /uav1/gain_manager/set_gains
+[component_container_mt-7] [INFO] [1779756059.227384765] [uav1.gain_manager]: Created client '~/set_gains_out' -> '/uav1/control_manager/set_parameters'
+[component_container_mt-7] [INFO] [1779756059.229280798] [uav1.gain_manager]: Subscribed to topic '~/estimation_diagnostics_in' -> '/uav1/estimation_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756059.230497386] [uav1.gain_manager]: Subscribed to topic '~/control_manager_diagnostics_in' -> '/uav1/control_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756059.233281423] [uav1.gain_manager]:  Created publisher on topic '~/diagnostics_out' -> '/uav1/gain_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756059.233773463] [uav1.gain_manager]: profiler initialized
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/uav1/gain_manager' in container '/uav1/uav_core_container'
+[component_container_mt-7] [INFO] [1779756059.233865550] [uav1.gain_manager]: initialized
+[component_container_mt-7] [INFO] [1779756059.234974233] [uav1.uav_core_container]: Load Library: /opt/ros/jazzy/lib/libMrsUavManagers_TransformManager.so
+[component_container_mt-7] [INFO] [1779756059.238381816] [uav1.uav_core_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::transform_manager::TransformManager>
+[component_container_mt-7] [INFO] [1779756059.238423659] [uav1.uav_core_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::transform_manager::TransformManager>
+[component_container_mt-5] [INFO] [1779756059.241670358] [uav1.hw_api]: getting Altitude
+[component_container_mt-5] [INFO] [1779756059.253105428] [uav1.hw_api]: getting Gps Status Raw
+[component_container_mt-7] [INFO] [1779756059.276019138] [uav1.transform_manager]: [TransformManager]: initializing
+[component_container_mt-7] [INFO] [1779756059.276079475] [uav1.transform_manager]: Intra-process comms is: ON
+[component_container_mt-7] 	custom_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/spawner.yaml
+[component_container_mt-7] 	platform_config:	
+[component_container_mt-7] 	world_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/world_config.yaml
+[component_container_mt-5] [INFO] [1779756059.288266243] [uav1.hw_api]: main timer spinning
+[component_container_mt-7] 	private_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/private/transform_manager/transform_manager.yaml
+[component_container_mt-7] 	public_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/public/transform_manager/transform_manager.yaml
+[component_container_mt-7] 	estimators_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/public/active_estimators.yaml
+[component_container_mt-7] 	uav_name:	uav1
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/scope_timer/enabled:	0
+[component_container_mt-7] 	mrs_uav_managers/world_origin/units:	LATLON
+[component_container_mt-7] 	mrs_uav_managers/world_origin/origin_x:	47.3977
+[component_container_mt-7] 	mrs_uav_managers/world_origin/origin_y:	8.54559
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/local_origin_tf/parent:	fcu
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/local_origin_tf/child:	local_origin
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/local_origin_tf/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/stable_origin_tf/parent:	fcu
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/stable_origin_tf/child:	stable_origin
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/stable_origin_tf/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/fixed_origin_tf/parent:	fcu
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/fixed_origin_tf/child:	fixed_origin
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/fixed_origin_tf/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/fcu_untilted_tf/parent:	fcu
+[component_container_mt-7] [INFO] [1779756059.290530448] [uav1.transform_manager]: [TransformManager]: Loading world origin in LatLon units.
+[component_container_mt-7] [INFO] [1779756059.290697028] [uav1.transform_manager]: [TransformManager]: Converted to UTM x: 465710.759233, y: 5249465.475318.
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/fcu_untilted_tf/child:	fcu_untilted
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/fcu_untilted_tf/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/altitude_amsl_tf/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/altitude_amsl_tf/parent:	fcu_untilted
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/altitude_amsl_tf/child:	amsl_origin
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/rtk_antenna/frame_id:	rtk_antenna
+[component_container_mt-7] 	mrs_uav_managers/estimation_manager/state_estimators:	gps_garmin, gps_baro
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/tf_sources:	
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/utm_source_priority:	f9p, rtk_garmin, rtk, gps_garmin, gps_baro
+[component_container_mt-7] [INFO] [1779756059.290919072] [uav1.transform_manager]: [TransformManager]: the source for utm_origin and world origin is: gps_garmin
+[component_container_mt-7] [INFO] [1779756059.290926437] [uav1.transform_manager]: [TransformManager]: loading tf source of estimator: gps_garmin
+[component_container_mt-7] [INFO] [1779756059.291474565] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'private_config':	/opt/ros/jazzy/share/mrs_uav_managers/config/private/transform_manager/transform_manager.yaml
+[component_container_mt-7] [INFO] [1779756059.291568821] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'public_config':	/opt/ros/jazzy/share/mrs_uav_managers/config/public/transform_manager/transform_manager.yaml
+[component_container_mt-7] [INFO] [1779756059.293334193] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'estimators_config':	/opt/ros/jazzy/share/mrs_uav_managers/config/public/active_estimators.yaml
+[component_container_mt-7] [INFO] [1779756059.293830942] [uav1.transform_manager]: [TransformManager/gps_garmin]: initializing
+[component_container_mt-7] [INFO] [1779756059.293890882] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/gps_garmin/odom_topic':	odom
+[component_container_mt-7] [INFO] [1779756059.293924663] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/gps_garmin/custom_frame_id/enabled':	0
+[component_container_mt-7] [INFO] [1779756059.293950196] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/gps_garmin/custom_child_frame_id/enabled':	0
+[component_container_mt-7] [INFO] [1779756059.294036049] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/gps_garmin/tf_from_attitude/enabled':	1
+[component_container_mt-7] [INFO] [1779756059.294060432] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/gps_garmin/tf_from_attitude/attitude_topic':	attitude
+[component_container_mt-7] [INFO] [1779756059.294081795] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/gps_garmin/namespace':	estimation_manager/gps_garmin
+[component_container_mt-7] [INFO] [1779756059.294113491] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/gps_garmin/inverted':	1
+[component_container_mt-7] [INFO] [1779756059.294142593] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/gps_garmin/republish_in_frames':	local_origin
+[component_container_mt-7] [INFO] [1779756059.294162884] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/gps_garmin/utm_based':	1
+[component_container_mt-7] [INFO] [1779756059.294179033] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/utm_origin_tf/parent':	fcu
+[component_container_mt-7] [INFO] [1779756059.294194861] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/utm_origin_tf/child':	utm_origin
+[component_container_mt-7] [INFO] [1779756059.294214757] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/world_origin_tf/parent':	fcu
+[component_container_mt-7] [INFO] [1779756059.294232368] [uav1.transform_manager]: [TransformManager/gps_garmin]: parameter 'mrs_uav_managers/transform_manager/world_origin_tf/child':	world_origin
+[component_container_mt-7] [INFO] [1779756059.296584815] [uav1.transform_manager]: Subscribed to topic '/uav1/estimation_manager/gps_garmin/odom' -> '/uav1/estimation_manager/gps_garmin/odom'
+[component_container_mt-7] [INFO] [1779756059.298777966] [uav1.transform_manager]: Subscribed to topic '/uav1/estimation_manager/gps_garmin/attitude' -> '/uav1/estimation_manager/gps_garmin/attitude'
+[component_container_mt-7] [INFO] [1779756059.300175986] [uav1.transform_manager]:  Created publisher on topic '/uav1/estimation_manager/gps_garmin/odom/local' -> '/uav1/estimation_manager/gps_garmin/odom/local'
+[component_container_mt-7] [INFO] [1779756059.300222199] [uav1.transform_manager]: [TransformManager/gps_garmin]: initialized
+[component_container_mt-7] [INFO] [1779756059.300451013] [uav1.transform_manager]: [TransformManager]: loading tf source of estimator: gps_baro
+[component_container_mt-7] [INFO] [1779756059.301061157] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'private_config':	/opt/ros/jazzy/share/mrs_uav_managers/config/private/transform_manager/transform_manager.yaml
+[component_container_mt-7] [INFO] [1779756059.301176347] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'public_config':	/opt/ros/jazzy/share/mrs_uav_managers/config/public/transform_manager/transform_manager.yaml
+[component_container_mt-5] [INFO] [1779756059.301228003] [uav1.hw_api]: getting magnetic field
+[component_container_mt-7] [INFO] [1779756059.302750168] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'estimators_config':	/opt/ros/jazzy/share/mrs_uav_managers/config/public/active_estimators.yaml
+[component_container_mt-7] [INFO] [1779756059.302965143] [uav1.transform_manager]: [TransformManager/gps_baro]: initializing
+[component_container_mt-7] [INFO] [1779756059.303037254] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/gps_baro/odom_topic':	odom
+[component_container_mt-7] [INFO] [1779756059.303066651] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/gps_baro/custom_frame_id/enabled':	0
+[component_container_mt-7] [INFO] [1779756059.303087176] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/gps_baro/custom_child_frame_id/enabled':	0
+[component_container_mt-7] [INFO] [1779756059.303107375] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/gps_baro/tf_from_attitude/enabled':	1
+[component_container_mt-7] [INFO] [1779756059.303128120] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/gps_baro/tf_from_attitude/attitude_topic':	attitude
+[component_container_mt-7] [INFO] [1779756059.303145191] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/gps_baro/namespace':	estimation_manager/gps_baro
+[component_container_mt-7] [INFO] [1779756059.303278243] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/gps_baro/inverted':	1
+[component_container_mt-7] [INFO] [1779756059.303309618] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/gps_baro/republish_in_frames':	
+[component_container_mt-7] [INFO] [1779756059.303330041] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/gps_baro/utm_based':	1
+[component_container_mt-7] [INFO] [1779756059.303346559] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/utm_origin_tf/parent':	fcu
+[component_container_mt-7] [INFO] [1779756059.303362536] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/utm_origin_tf/child':	utm_origin
+[component_container_mt-7] [INFO] [1779756059.303381232] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/world_origin_tf/parent':	fcu
+[component_container_mt-7] [INFO] [1779756059.303394275] [uav1.transform_manager]: [TransformManager/gps_baro]: parameter 'mrs_uav_managers/transform_manager/world_origin_tf/child':	world_origin
+[component_container_mt-7] [INFO] [1779756059.306754427] [uav1.transform_manager]: Subscribed to topic '/uav1/estimation_manager/gps_baro/odom' -> '/uav1/estimation_manager/gps_baro/odom'
+[component_container_mt-7] [INFO] [1779756059.308442908] [uav1.transform_manager]: Subscribed to topic '/uav1/estimation_manager/gps_baro/attitude' -> '/uav1/estimation_manager/gps_baro/attitude'
+[component_container_mt-7] [INFO] [1779756059.308563315] [uav1.transform_manager]: [TransformManager/gps_baro]: initialized
+[component_container_mt-7] 	mrs_uav_managers/transform_manager/mapping_origin_tf/enabled:	0
+[component_container_mt-7] [INFO] [1779756059.310684117] [uav1.transform_manager]: Subscribed to topic '~/uav_state_in' -> '/uav1/estimation_manager/uav_state'
+[component_container_mt-7] [INFO] [1779756059.312816014] [uav1.transform_manager]: Subscribed to topic '~/height_agl_in' -> '/uav1/estimation_manager/height_agl'
+[component_container_mt-7] [INFO] [1779756059.315406039] [uav1.transform_manager]: Subscribed to topic '~/altitude_amsl_in' -> '/uav1/hw_api/altitude'
+[component_container_mt-7] [INFO] [1779756059.317587475] [uav1.transform_manager]: Subscribed to topic '~/orientation_in' -> '/uav1/hw_api/orientation'
+[component_container_mt-7] [INFO] [1779756059.319494800] [uav1.transform_manager]: Subscribed to topic '~/gnss_in' -> '/uav1/hw_api/gnss'
+[component_container_mt-7] [INFO] [1779756059.321788600] [uav1.transform_manager]: Created service: /uav1/transform_manager/set_world_origin
+[component_container_mt-7] [INFO] [1779756059.322111895] [uav1.transform_manager]: [TransformManager] got tf from FCU to RTK antenna
+[component_container_mt-7] [INFO] [1779756059.322127757] [uav1.transform_manager]: [TransformManager]: initialized
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/uav1/transform_manager' in container '/uav1/uav_core_container'
+[component_container_mt-7] [INFO] [1779756059.326455309] [uav1.uav_core_container]: Load Library: /opt/ros/jazzy/lib/libMrsUavManagers_EstimationManager.so
+[component_container_mt-7] [INFO] [1779756059.328634772] [uav1.uav_core_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::estimation_manager::EstimationManager>
+[component_container_mt-7] [INFO] [1779756059.328757352] [uav1.uav_core_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::estimation_manager::EstimationManager>
+[component_container_mt-7] [INFO] [1779756059.344702057] [uav1.transform_manager]: [TransformManager]: Broadcasting transform from parent frame: uav1/fcu_untilted to child frame: uav1/amsl_origin
+[component_container_mt-7] [INFO] [1779756059.344777114] [uav1.transform_manager]: [TransformManager]: utm_origin position calculated as: x: 465708.70, y: 5249462.39, z: 47.39 from GNSS
+[component_container_mt-7] [INFO] [1779756059.366861021] [uav1.estimation_manager]: Subscribed to topic '~/hw_api_capabilities_in' -> '/uav1/hw_api/capabilities'
+[component_container_mt-7] [INFO] [1779756059.368129948] [uav1.estimation_manager]: Subscribed to topic '~/control_manager_diagnostics_in' -> '/uav1/control_manager/diagnostics'
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/uav1/estimation_manager' in container '/uav1/uav_core_container'
+[component_container_mt-7] [INFO] [1779756059.369595472] [uav1.uav_core_container]: Load Library: /opt/ros/jazzy/lib/libMrsUavManagers_ConstraintManager.so
+[component_container_mt-7] [INFO] [1779756059.370792036] [uav1.uav_core_container]: Found class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::constraint_manager::ConstraintManager>
+[component_container_mt-7] [INFO] [1779756059.370888675] [uav1.uav_core_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<mrs_uav_managers::constraint_manager::ConstraintManager>
+[component_container_mt-7] [INFO] [1779756059.399432836] [uav1.constraint_manager]: initializing
+[component_container_mt-7] [INFO] [1779756059.399480456] [uav1.constraint_manager]: Intra-process comms is: ON
+[component_container_mt-7] 	custom_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/spawner.yaml
+[component_container_mt-7] 	platform_config:	
+[component_container_mt-7] 	private_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/private/constraint_manager/constraint_manager.yaml
+[component_container_mt-7] 	public_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/public/constraint_manager/constraint_manager.yaml
+[component_container_mt-7] 	public_constraints:	/opt/ros/jazzy/share/mrs_uav_managers/config/public/constraint_manager/constraints.yaml
+[component_container_mt-7] 	enable_profiler:	0
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/constraints:	slow, medium, fast
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/estimator_types:	gps_garmin, gps_baro, rtk, rtk_garmin, other, ground_truth, passthrough, f9p, dummy
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/rate:	10
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/diagnostics_rate:	1
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/horizontal/speed:	1
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/horizontal/acceleration:	1
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/horizontal/jerk:	20
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/horizontal/snap:	20
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/vertical/ascending/speed:	1
+[component_container_mt-7] [INFO] [1779756059.405375337] [uav1.constraint_manager]: loading constraints 'slow'
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/vertical/ascending/acceleration:	1
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/vertical/ascending/jerk:	20
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/vertical/ascending/snap:	20
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/vertical/descending/speed:	1
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/vertical/descending/acceleration:	1
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/vertical/descending/jerk:	20
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/vertical/descending/snap:	20
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/heading/speed:	0.5
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/heading/acceleration:	1
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/heading/jerk:	10
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/heading/snap:	10
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/angular_speed/roll:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/angular_speed/pitch:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/angular_speed/yaw:	10
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/slow/tilt:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/horizontal/speed:	4
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/horizontal/acceleration:	2
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/horizontal/jerk:	40
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/horizontal/snap:	40
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/vertical/ascending/speed:	2
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/vertical/ascending/acceleration:	1
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/vertical/ascending/jerk:	40
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/vertical/ascending/snap:	40
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/vertical/descending/speed:	2
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/vertical/descending/acceleration:	1
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/vertical/descending/jerk:	40
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/vertical/descending/snap:	40
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/heading/speed:	1
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/heading/acceleration:	1
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/heading/jerk:	20
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/heading/snap:	20
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/angular_speed/roll:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/angular_speed/pitch:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/angular_speed/yaw:	10
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/medium/tilt:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/horizontal/speed:	8
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/horizontal/acceleration:	4
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/horizontal/jerk:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/horizontal/snap:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/vertical/ascending/speed:	4
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/vertical/ascending/acceleration:	2
+[component_container_mt-7] [INFO] [1779756059.405720924] [uav1.constraint_manager]: loading constraints 'medium'
+[component_container_mt-7] [INFO] [1779756059.406096403] [uav1.constraint_manager]: loading constraints 'fast'
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/vertical/ascending/jerk:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/vertical/ascending/snap:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/vertical/descending/speed:	4
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/vertical/descending/acceleration:	2
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/vertical/descending/jerk:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/vertical/descending/snap:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/heading/speed:	2
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/heading/acceleration:	2
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/heading/jerk:	40
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/heading/snap:	40
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/angular_speed/roll:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/angular_speed/pitch:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/angular_speed/yaw:	10
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/fast/tilt:	60
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/allowed_constraints/gps_garmin:	slow, medium, fast
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/allowed_constraints/gps_baro:	slow, medium, fast
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/allowed_constraints/rtk:	slow, medium, fast
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/allowed_constraints/rtk_garmin:	slow, medium, fast
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/allowed_constraints/other:	slow
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/allowed_constraints/ground_truth:	slow, medium, fast
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/allowed_constraints/passthrough:	slow, medium, fast
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/allowed_constraints/f9p:	slow, medium, fast
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/allowed_constraints/dummy:	slow
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/default_constraints/gps_garmin:	slow
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/default_constraints/gps_baro:	slow
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/default_constraints/rtk:	slow
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/default_constraints/rtk_garmin:	slow
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/default_constraints/other:	slow
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/default_constraints/ground_truth:	slow
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/default_constraints/passthrough:	slow
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/default_constraints/f9p:	slow
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/default_constraints/dummy:	slow
+[component_container_mt-7] [INFO] [1779756059.406663022] [uav1.constraint_manager]: done loading dynamic params
+[component_container_mt-7] [INFO] [1779756059.408647122] [uav1.constraint_manager]: Created service: /uav1/constraint_manager/set_constraints
+[component_container_mt-7] [INFO] [1779756059.410905914] [uav1.constraint_manager]: Created service: /uav1/constraint_manager/constraints_override
+[component_container_mt-7] [INFO] [1779756059.416399487] [uav1.constraint_manager]: Created client '~/set_constraints_out' -> '/uav1/control_manager/set_constraints'
+[component_container_mt-7] [INFO] [1779756059.418534867] [uav1.constraint_manager]: Subscribed to topic '~/estimation_diagnostics_in' -> '/uav1/estimation_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756059.420897945] [uav1.constraint_manager]:  Created publisher on topic '~/diagnostics_out' -> '/uav1/constraint_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756059.421222108] [uav1.constraint_manager]: profiler initialized
+[component_container_mt-7] [INFO] [1779756059.421322895] [uav1.constraint_manager]: initialized
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/scope_timer/enabled:	0
+[component_container_mt-7] 	mrs_uav_managers/constraint_manager/scope_timer/log_filename:	
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/uav1/constraint_manager' in container '/uav1/uav_core_container'
+[component_container_mt-7] [WARN] [1779756059.926175703] [uav1.safety_area_manager]: waiting for data: HW Api= FALSE 
+[component_container_mt-7] [INFO] [1779756059.954723725] [uav1.control_manager]: waiting for HW API capabilities
+[component_container_mt-7] [INFO] [1779756059.978878247] [uav1.uav_status_acquisition]: timerHostInfo(): spinning
+[component_container_mt-5] [INFO] [1779756060.117530383] [uav1.hw_api]: timerStatus() spinning
+[component_container_mt-5] [INFO] [1779756060.117577662] [uav1.hw_api]: timerCapabilities() spinning
+[component_container_mt-7] [INFO] [1779756060.175641978] [uav1.uav_manager]: got HW API capabilities, initializing
+[component_container_mt-7] [INFO] [1779756060.175712129] [uav1.uav_manager]: initializing
+[component_container_mt-7] [INFO] [1779756060.175722724] [uav1.uav_manager]: Intra-process comms is: ON
+[component_container_mt-7] 	custom_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/spawner.yaml
+[component_container_mt-7] 	platform_config:	
+[component_container_mt-7] 	world_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/world_config.yaml
+[component_container_mt-7] 	private_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/private/uav_manager.yaml
+[component_container_mt-7] 	public_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/public/uav_manager.yaml
+[component_container_mt-7] 	uav_name:	uav1
+[component_container_mt-7] 	enable_profiler:	0
+[component_container_mt-7] 	uav_mass:	1
+[component_container_mt-7] 	g:	9.81
+[component_container_mt-7] [ERROR] [1779756060.178687060] [uav1.uav_manager]: Param 'motor_params/a' not found: in YAML files, in ROS, no default value provided.
+[component_container_mt-7] [ERROR] [1779756060.178753007] [uav1.uav_manager]: Could not load non-optional parameter motor_params/a
+[component_container_mt-7] [ERROR] [1779756060.178837001] [uav1.uav_manager]: Param 'motor_params/b' not found: in YAML files, in ROS, no default value provided.
+[component_container_mt-7] [ERROR] [1779756060.178849283] [uav1.uav_manager]: Could not load non-optional parameter motor_params/b
+[component_container_mt-7] [ERROR] [1779756060.178922521] [uav1.uav_manager]: Param 'motor_params/c' not found: in YAML files, in ROS, no default value provided.
+[component_container_mt-7] [ERROR] [1779756060.179011540] [uav1.uav_manager]: Param 'motor_params/n_motors' not found: in YAML files, in ROS, no default value provided.
+[component_container_mt-7] [ERROR] [1779756060.179023539] [uav1.uav_manager]: Could not load non-optional parameter motor_params/n_motors
+[component_container_mt-7] 	motor_params/c:	0
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/null_tracker:	NullTracker
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/takeoff/rate:	10
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/takeoff/after_takeoff/tracker:	MpcTracker
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/takeoff/after_takeoff/controller:	MpcController
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/takeoff/during_takeoff/controller:	MpcController
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/takeoff/during_takeoff/tracker:	LandoffTracker
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/takeoff/takeoff_height:	1.5
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/landing/rate:	10
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/landing/landing_tracker:	LandoffTracker
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/landing/landing_controller:	MpcController
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/landing/landing_cutoff_mass_factor:	0.5
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/landing/landing_cutoff_timeout:	2
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/landing/disarm:	1
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/landing/descend_height:	2
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/landing/tracking_tolerance/translation:	0.1
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/landing/tracking_tolerance/heading:	0.1
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/midair_activation/rate:	100
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/midair_activation/during_activation/controller:	MidairActivationController
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/midair_activation/during_activation/tracker:	MidairActivationTracker
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/midair_activation/after_activation/controller:	MpcController
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/midair_activation/after_activation/tracker:	MpcTracker
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/max_height_checking/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/max_height_checking/rate:	10
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/max_height_checking/safety_height_offset:	0.25
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/min_height_checking/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/min_height_checking/rate:	10
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/min_height_checking/safety_height_offset:	0.25
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/min_height_checking/min_height:	0.5
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/require_gain_manager:	1
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/require_constraint_manager:	1
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/flight_timer/enabled:	0
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/flight_timer/rate:	1
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/flight_timer/max_time:	10
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/max_throttle/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/max_throttle/rate:	30
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/max_throttle/max_throttle:	0.8
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/max_throttle/eland_timeout:	1
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/max_throttle/ungrip_timeout:	0.5
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/diagnostics/rate:	1
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/scope_timer/enabled:	0
+[component_container_mt-7] 	mrs_uav_managers/uav_manager/scope_timer/log_filename:	
+[component_container_mt-7] [ERROR] [1779756060.179616809] [uav1.uav_manager]: Could not load all parameters!
+[component_container_mt-7] [WARN] [1779756060.233896030] [uav1.gain_manager]: can not do gain management, missing estimator diagnostics!
+[component_container_mt-7] [WARN] [1779756060.421600563] [uav1.constraint_manager]: can not do constraint management, missing estimation diagnostics!
+[component_container_mt-5] [INFO] [1779756060.441764909] [uav1.hw_api]: getting battery
+[component_container_mt-7] [INFO] [1779756060.926255902] [uav1.safety_area_manager]: initializing
+[component_container_mt-7] [INFO] [1779756060.926313610] [uav1.safety_area_manager]: Intra-process comms is: ON
+[component_container_mt-7] 	custom_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/spawner.yaml
+[component_container_mt-7] 	platform_config:	
+[component_container_mt-7] 	world_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/world_config.yaml
+[component_container_mt-7] 	private_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/private/safety_area_manager.yaml
+[component_container_mt-7] 	uav_name:	uav1
+[component_container_mt-7] 	enable_profiler:	0
+[component_container_mt-7] 	mrs_uav_managers/safety_area_manager/status_timer_rate:	10
+[component_container_mt-7] [INFO] [1779756060.928592482] [uav1.safety_area_manager]: profiler initialized
+[component_container_mt-7] 	mrs_uav_managers/safety_area_manager/scope_timer/enabled:	0
+[component_container_mt-7] 	mrs_uav_managers/safety_area_manager/scope_timer/log_filename:	
+[component_container_mt-7] 	mrs_uav_managers/world_origin/units:	LATLON
+[component_container_mt-7] 	mrs_uav_managers/world_origin/origin_x:	47.3977
+[component_container_mt-7] 	mrs_uav_managers/world_origin/origin_y:	8.54559
+[component_container_mt-7] 	mrs_uav_managers/safety_area_manager/safety_area/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/safety_area_manager/safety_area/horizontal/frame_name:	world_origin
+[component_container_mt-7] 	mrs_uav_managers/safety_area_manager/safety_area/vertical/frame_name:	world_origin
+[component_container_mt-7] 	mrs_uav_managers/safety_area_manager/safety_area/horizontal/points:	-50 -50
+[component_container_mt-7]  50 -50
+[component_container_mt-7]  50  50
+[component_container_mt-7] -50  50
+[component_container_mt-7] 	mrs_uav_managers/safety_area_manager/safety_area/vertical/max_z:	15
+[component_container_mt-7] 	mrs_uav_managers/safety_area_manager/safety_area/vertical/min_z:	0.5
+[component_container_mt-7] 	mrs_uav_managers/safety_area_manager/safety_area/obstacles/present:	0
+[component_container_mt-7] [INFO] [1779756060.929110748] [uav1.safety_area_manager]: New safety zone created
+[component_container_mt-7] [INFO] [1779756060.930790459] [uav1.safety_area_manager]:  Created publisher on topic '~/diagnostics_out' -> '/uav1/safety_area_manager/diagnostics'
+[component_container_mt-7] [INFO] [1779756060.933463768] [uav1.safety_area_manager]: Subscribed to topic '~/odometry_in' -> '/uav1/estimation_manager/odom_main'
+[component_container_mt-7] [INFO] [1779756060.934283140] [uav1.safety_area_manager]: Subscribed to topic '~/max_z_in' -> '/uav1/estimation_manager/max_flight_z_agl'
+[component_container_mt-7] [INFO] [1779756060.935415517] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/point_in_safety_area_3d
+[component_container_mt-7] [INFO] [1779756060.937315075] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/point_in_safety_area_2d
+[component_container_mt-7] [INFO] [1779756060.939897407] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/path_in_safety_area_3d
+[component_container_mt-7] [INFO] [1779756060.942833378] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/path_in_safety_area_2d
+[component_container_mt-7] [INFO] [1779756060.946137449] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/set_safety_border
+[component_container_mt-7] [INFO] [1779756060.948756913] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/toggle_safety_area
+[component_container_mt-7] [INFO] [1779756060.952057320] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/add_obstacle
+[component_container_mt-7] [INFO] [1779756060.955152264] [uav1.control_manager]: got HW API capabilities, the possible control modes are:
+[component_container_mt-7] [INFO] [1779756060.955216058] [uav1.control_manager]: - attitude rate command
+[component_container_mt-7] [INFO] [1779756060.955222917] [uav1.control_manager]: - attitude command
+[component_container_mt-7] [INFO] [1779756060.955273626] [uav1.control_manager]: initializing
+[component_container_mt-7] [INFO] [1779756060.955295840] [uav1.control_manager]: Intra-process comms is: ON
+[component_container_mt-7] 	custom_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/spawner.yaml
+[component_container_mt-7] 	platform_config:	
+[component_container_mt-7] [INFO] [1779756060.956592149] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/set_obstacle
+[component_container_mt-7] 	world_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/world_config.yaml
+[component_container_mt-7] 	network_config:	/root/ros2_ws/install/imav_26/share/imav_26/config/network_config.yaml
+[component_container_mt-7] 	private_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/private/control_manager.yaml
+[component_container_mt-7] 	public_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/public/control_manager.yaml
+[component_container_mt-7] [INFO] [1779756060.963988664] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/get_max_z
+[component_container_mt-7] 	private_trackers:	/opt/ros/jazzy/share/mrs_uav_managers/config/private/trackers.yaml
+[component_container_mt-7] 	private_controllers:	/opt/ros/jazzy/share/mrs_uav_managers/config/private/controllers.yaml
+[component_container_mt-7] 	public_controllers:	/opt/ros/jazzy/share/mrs_uav_managers/config/public/controllers.yaml
+[component_container_mt-7] 	uav_name:	uav1
+[component_container_mt-7] 	body_frame:	fcu
+[component_container_mt-7] 	enable_profiler:	0
+[component_container_mt-7] 	uav_mass:	1
+[component_container_mt-7] 	body_disturbance_x:	0
+[component_container_mt-7] 	body_disturbance_y:	0
+[component_container_mt-7] [INFO] [1779756060.971580594] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/get_min_z
+[component_container_mt-7] [ERROR] [1779756060.972006843] [uav1.control_manager]: Param 'motor_params/a' not found: in YAML files, in ROS, no default value provided.
+[component_container_mt-7] 	g:	9.81
+[component_container_mt-7] [ERROR] [1779756060.972106079] [uav1.control_manager]: Could not load non-optional parameter motor_params/a
+[component_container_mt-7] [ERROR] [1779756060.972345097] [uav1.control_manager]: Param 'motor_params/b' not found: in YAML files, in ROS, no default value provided.
+[component_container_mt-7] [ERROR] [1779756060.972369612] [uav1.control_manager]: Could not load non-optional parameter motor_params/b
+[component_container_mt-7] [ERROR] [1779756060.972536220] [uav1.control_manager]: Param 'motor_params/c' not found: in YAML files, in ROS, no default value provided.
+[component_container_mt-7] [ERROR] [1779756060.972730161] [uav1.control_manager]: Param 'motor_params/n_motors' not found: in YAML files, in ROS, no default value provided.
+[component_container_mt-7] [ERROR] [1779756060.972758847] [uav1.control_manager]: Could not load non-optional parameter motor_params/n_motors
+[component_container_mt-7] 	motor_params/c:	0
+[component_container_mt-7] 	mrs_uav_managers/control_manager/state_input:	0
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/min_throttle_null_tracker:	0.1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/ehover_tracker:	LandoffTracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/failsafe_controller:	FailsafeController
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/hover_throttle_range_check/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/hover_throttle_range_check/min:	0.2
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/hover_throttle_range_check/max:	0.7
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/eland/controller:	EmergencyController
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/eland/cutoff_mass_factor:	0.5
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/eland/cutoff_timeout:	2
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/eland/timer_rate:	10
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/eland/disarm:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/escalating_failsafe/service/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/escalating_failsafe/rc/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/escalating_failsafe/rc/channel_number:	7
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/escalating_failsafe/rc/threshold:	0.5
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/escalating_failsafe/timeout:	2
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/escalating_failsafe/ehover:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/escalating_failsafe/eland:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/escalating_failsafe/failsafe:	0
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/tilt_limit/eland/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/tilt_limit/eland/limit:	75
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/tilt_limit/disarm/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/tilt_limit/disarm/limit:	90
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/yaw_error_eland/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/yaw_error_eland/limit:	90
+[component_container_mt-7] 	mrs_uav_managers/control_manager/status_timer_rate:	10
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/safety_timer_rate:	100
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/failsafe_timer_rate:	100
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/rc_emergency_handoff/enabled:	0
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/odometry_max_missing_time:	0.1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/odometry_innovation_eland/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/tilt_error_disarm/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/tilt_error_disarm/timeout:	0.5
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/tilt_error_disarm/error_threshold:	20
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/horizontal/speed:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/horizontal/acceleration:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/horizontal/jerk:	20
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/horizontal/snap:	20
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/vertical/ascending/speed:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/vertical/ascending/acceleration:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/vertical/ascending/jerk:	20
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/vertical/ascending/snap:	20
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/vertical/descending/speed:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/vertical/descending/acceleration:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/vertical/descending/jerk:	20
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/vertical/descending/snap:	20
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/heading/speed:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/heading/acceleration:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/heading/jerk:	10
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/heading/snap:	10
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/angular_speed/roll:	20
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/angular_speed/pitch:	20
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/angular_speed/yaw:	10
+[component_container_mt-7] 	mrs_uav_managers/control_manager/default_constraints/tilt:	60
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/mode:	0
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/carrot_distance:	4
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/joystick_timer_rate:	30
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/attitude_control/tracker:	LandoffTracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/attitude_control/controller:	MpcController
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/attitude_control/fallback/tracker:	MpcTracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/attitude_control/fallback/controller:	EmergencyController
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/A:	0
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/B:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/X:	2
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/Y:	3
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/start:	7
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/back:	6
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/LT:	2
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/RT:	5
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/L_joy:	9
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/R_joy:	10
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/pitch:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/roll:	3
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/heading:	0
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channels/throttle:	4
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channel_multipliers/pitch:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channel_multipliers/roll:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channel_multipliers/heading:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/joystick/channel_multipliers/throttle:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/switch_tracker:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/switch_controller:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/tracker:	MpcTracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/controller:	Se3Controller
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/timer_rate:	20
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/horizontal/min_distance_to_obstacle:	1.2
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/horizontal/derived_from_dynamics:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/vertical/min_distance_to_obstacle:	1.2
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/vertical/derived_from_dynamics:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/horizontal/overshoot:	0.2
+[component_container_mt-7] 	mrs_uav_managers/control_manager/obstacle_bumper/vertical/overshoot:	0.2
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/tracker_error_action:	eland
+[component_container_mt-7] 	mrs_uav_managers/control_manager/trajectory_tracking/snap_to_safety_area:	0
+[component_container_mt-7] 	mrs_uav_managers/control_manager/rc_joystick/enabled:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/rc_joystick/channel_number:	6
+[component_container_mt-7] 	mrs_uav_managers/control_manager/rc_joystick/horizontal_speed:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/rc_joystick/vertical_speed:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/rc_joystick/heading_rate:	0.2
+[component_container_mt-7] 	mrs_uav_managers/control_manager/rc_joystick/channels/pitch:	2
+[component_container_mt-7] 	mrs_uav_managers/control_manager/rc_joystick/channels/roll:	0
+[component_container_mt-7] 	mrs_uav_managers/control_manager/rc_joystick/channels/heading:	3
+[component_container_mt-7] 	mrs_uav_managers/control_manager/rc_joystick/channels/throttle:	1
+[component_container_mt-7] 	mrs_uav_managers/control_manager/pirouette/speed:	0.25
+[component_container_mt-7] 	mrs_uav_managers/control_manager/pirouette/timer_rate:	10
+[component_container_mt-7] 	mrs_uav_managers/control_manager/safety/parachute/enabled:	0
+[component_container_mt-7] [INFO] [1779756060.975704638] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/is_safety_zone_enabled
+[component_container_mt-7] [INFO] [1779756060.981396323] [uav1.safety_area_manager]: Created service: /uav1/safety_area_manager/update_world_origin
+[component_container_mt-7] [INFO] [1779756060.990113524] [uav1.safety_area_manager]: Created client '~/set_world_origin_out' -> '/uav1/estimation_manager/set_world_origin'
+[component_container_mt-7] [INFO] [1779756060.990361271] [uav1.safety_area_manager]: Safety area initialized
+[component_container_mt-7] 	mrs_uav_managers/control_manager/scope_timer/enabled:	0
+[component_container_mt-7] 	mrs_uav_managers/control_manager/scope_timer/log_filename:	
+[component_container_mt-7] 	detailed_uav_dynamics_params_config:	/opt/ros/jazzy/share/mrs_uav_managers/config/public/detailed_uav_dynamics_params.yaml
+[component_container_mt-7] 	model_params/enabled:	0
+[component_container_mt-7] [INFO] [1779756060.994023908] [uav1.control_manager]: detailed UAV model params were not provided
+[component_container_mt-7] 	mrs_uav_managers/control_manager/mrs_trackers:	NullTracker, LandoffTracker, MpcTracker, MidairActivationTracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/trackers:	
+[component_container_mt-7] 	mrs_uav_managers/control_manager/null_tracker:	NullTracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/landing_takeoff_tracker:	LandoffTracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/NullTracker/address:	mrs_uav_managers::NullTracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/NullTracker/namespace:	null_tracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/NullTracker/human_switchable:	0
+[component_container_mt-7] [INFO] [1779756060.995356779] [uav1.control_manager]: loading the tracker 'mrs_uav_managers::NullTracker'
+[component_container_mt-7] 	mrs_uav_managers/control_manager/LandoffTracker/address:	mrs_uav_trackers::landoff_tracker::LandoffTracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/LandoffTracker/namespace:	landoff_tracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/LandoffTracker/human_switchable:	0
+[component_container_mt-7] [INFO] [1779756060.996783205] [uav1.control_manager]: loading the tracker 'mrs_uav_trackers::landoff_tracker::LandoffTracker'
+[component_container_mt-7] 	mrs_uav_managers/control_manager/MpcTracker/address:	mrs_uav_trackers::mpc_tracker::MpcTracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/MpcTracker/namespace:	mpc_tracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/MpcTracker/human_switchable:	1
+[component_container_mt-7] [INFO] [1779756060.997899570] [uav1.control_manager]: loading the tracker 'mrs_uav_trackers::mpc_tracker::MpcTracker'
+[component_container_mt-7] 	mrs_uav_managers/control_manager/MidairActivationTracker/address:	mrs_uav_trackers::midair_activation_tracker::MidairActivationTracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/MidairActivationTracker/namespace:	midair_activation_tracker
+[component_container_mt-7] 	mrs_uav_managers/control_manager/MidairActivationTracker/human_switchable:	0
+[component_container_mt-7] [INFO] [1779756061.000311610] [uav1.control_manager]: loading the tracker 'mrs_uav_trackers::midair_activation_tracker::MidairActivationTracker'
+[component_container_mt-7] [INFO] [1779756061.000956554] [uav1.control_manager]: trackers were loaded
+[component_container_mt-7] [INFO] [1779756061.001056395] [uav1.control_manager]: initializing the tracker 'mrs_uav_managers::NullTracker'
+[component_container_mt-7] [INFO] [1779756061.001071628] [uav1.control_manager]: [NullTracker]: initialized
+[component_container_mt-7] [INFO] [1779756061.001108267] [uav1.control_manager]: initializing the tracker 'mrs_uav_trackers::landoff_tracker::LandoffTracker'
+[component_container_mt-7] 	enable_profiler:	0
+[component_container_mt-7] [INFO] [1779756061.001717483] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/horizontal_tracker/horizontal_speed':	3
+[component_container_mt-7] [INFO] [1779756061.001781957] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/horizontal_tracker/horizontal_acceleration':	2
+[component_container_mt-7] [INFO] [1779756061.001804303] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/vertical_tracker/vertical_speed':	1
+[component_container_mt-7] [INFO] [1779756061.001826592] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/vertical_tracker/vertical_acceleration':	2
+[component_container_mt-7] [INFO] [1779756061.001854305] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/vertical_tracker/takeoff_speed':	1
+[component_container_mt-7] [INFO] [1779756061.001885403] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/vertical_tracker/takeoff_acceleration':	0.3
+[component_container_mt-7] [INFO] [1779756061.001911427] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/vertical_tracker/landing_speed':	0.5
+[component_container_mt-7] [INFO] [1779756061.001935737] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/vertical_tracker/landing_acceleration':	0.3
+[component_container_mt-7] [INFO] [1779756061.001960515] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/vertical_tracker/elanding_speed':	0.5
+[component_container_mt-7] [INFO] [1779756061.001985771] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/vertical_tracker/elanding_acceleration':	1
+[component_container_mt-7] [INFO] [1779756061.002006102] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/heading_tracker/heading_rate':	0.5
+[component_container_mt-7] [INFO] [1779756061.002026479] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/heading_tracker/heading_gain':	0.2
+[component_container_mt-7] [INFO] [1779756061.002082075] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/main_timer_rate':	100
+[component_container_mt-7] [INFO] [1779756061.002109174] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/landing_reference':	-1
+[component_container_mt-7] [INFO] [1779756061.002139645] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/max_position_difference':	0.7
+[component_container_mt-7] [INFO] [1779756061.002180052] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/takeoff_disable_lateral_gains':	0
+[component_container_mt-7] [INFO] [1779756061.002201935] [uav1.control_manager]: [LandoffTracker]: parameter 'mrs_uav_trackers/landoff_tracker/takeoff_disable_lateral_gains_z':	0.3
+[component_container_mt-7] [INFO] [1779756061.002211672] [uav1.control_manager]: [LandoffTracker]: tracker_dt: 0.010000
+[component_container_mt-7] [INFO] [1779756061.002357114] [uav1.control_manager]: profiler initialized
+[component_container_mt-7] [INFO] [1779756061.007576383] [uav1.control_manager]: Created service: /uav1/control_manager/landoff_tracker/takeoff
+[component_container_mt-7] [INFO] [1779756061.010612012] [uav1.control_manager]: Created service: /uav1/control_manager/landoff_tracker/land
+[component_container_mt-7] [INFO] [1779756061.014979554] [uav1.control_manager]: Created service: /uav1/control_manager/landoff_tracker/eland
+[component_container_mt-7] [INFO] [1779756061.015204091] [uav1.control_manager]: [LandoffTracker]: initialized
+[component_container_mt-7] [INFO] [1779756061.015296235] [uav1.control_manager]: initializing the tracker 'mrs_uav_trackers::mpc_tracker::MpcTracker'
+[component_container_mt-7] [ERROR] [1779756061.015472084] [uav1.control_manager]: [MpcTracker]: Could not load all parameters!
+[component_container_mt-7] [ERROR] [1779756061.015513320] [uav1.control_manager]: failed to initialize the tracker 'mrs_uav_trackers::mpc_tracker::MpcTracker'
+[component_container_mt-7] 	enable_profiler:	0
+[component_container_mt-7] 	network/robot_names:	uav1
+[component_container_mt-7] [WARN] [1779756061.090465456] [uav1.safety_area_manager]: waiting for data: Odometry=FALSE
+[component_container_mt-7] ControlManager: shutdown(): called
+[ERROR] [component_container_mt-7]: process has died [pid 519520, exit code -11, cmd '/opt/ros/jazzy/lib/rclcpp_components/component_container_mt --ros-args -r __node:=uav_core_container -r __ns:=/uav1 --params-file /tmp/launch_params_pgkjy27g --params-file /tmp/launch_params_5zbmo47x --params-file /tmp/launch_params_ke7qlv5p'].
+^C[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[component_container_mt-5] [INFO] [1779756065.294003941] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [parameter_bridge-2]: process has finished cleanly [pid 518057]
+[INFO] [static_transform_publisher-6]: process has finished cleanly [pid 519519]
+[INFO] [static_transform_publisher-8]: process has finished cleanly [pid 519521]
+[static_transform_publisher-8] [INFO] [1779756065.294012876] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[component_container_mt-5] HwApiManager: shutdown(): called
+[component_container_mt-5] HwApiManager: calling destroy() on hw api plugin
+[component_container_mt-5] HwApiManager: unloading hw api plugin
+[mrs_drone_spawner-3] [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[mrs_drone_spawner-3] [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[mrs_drone_spawner-3] [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[mrs_drone_spawner-3] [sitl_uav_1-1] 
+[mrs_drone_spawner-3] [sitl_uav_1-1] PX4 Exiting...
+pxh> Exiting NOW.
+[mrs_drone_spawner-3] [image_bridge-2] [INFO] [1779756065.294009414] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[mrs_drone_spawner-3] [parameter_bridge-1] [INFO] [1779756065.294480801] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[mrs_drone_spawner-3] [INFO] [sitl_uav_1-1]: process has finished cleanly [pid 518698]
+[mrs_drone_spawner-3] [mavros_node-1] [INFO] [1779756065.294003550] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[mrs_drone_spawner-3] [mavros_node-1] [WARN] [1779756065.295867512] [uav1.mavros.mavros]: UAS Executor terminated
+[mrs_drone_spawner-3] [image_bridge-2] [FATAL] [1779756065.303655410] [uav1.ros_gz_image]: Call to publish() on an invalid image_transport::Publisher
+[mrs_drone_spawner-3] [INFO] [parameter_bridge-1]: process has finished cleanly [pid 518333]
+[static_transform_publisher-6] [INFO] [1779756065.294490942] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-2] [INFO] [1779756065.294835863] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[component_container_mt-5] HwApiManager: finished shutdown()
+[mrs_drone_spawner-3] [INFO] [image_bridge-2]: process has finished cleanly [pid 518334]
+[mrs_drone_spawner-3] [INFO] [mavros_node-1]: process has finished cleanly [pid 518384]
+[mrs_drone_spawner-3] [INFO] [MrsDroneSpawner]: Exit requested
+[mrs_drone_spawner-3] [INFO] [MrsDroneSpawner]: Shutting down 3 subprocesses
+[mrs_drone_spawner-3] [INFO] [MrsDroneSpawner]: Process 518697 finished cleanly
+[mrs_drone_spawner-3] [INFO] [MrsDroneSpawner]: Process 518332 finished cleanly
+[mrs_drone_spawner-3] [INFO] [MrsDroneSpawner]: Process 518331 finished cleanly
+[mrs_drone_spawner-3] [INFO] [MrsDroneSpawner]: Exited gracefully
+[INFO] [mrs_drone_spawner-3]: process has finished cleanly [pid 518058]
+[ERROR] [component_container_mt-5]: process has died [pid 519518, exit code -11, cmd '/opt/ros/jazzy/lib/rclcpp_components/component_container_mt --ros-args -r __node:=uav1_container -r __ns:=/uav1'].
+[ERROR] [gazebo-1]: process has died [pid 518056, exit code -2, cmd 'ruby /opt/ros/jazzy/opt/gz_tools_vendor/bin/gz sim /opt/ros/jazzy/share/mrs_gazebo_common_resources/worlds/grass_plane.sdf -r --force-version 8'].
