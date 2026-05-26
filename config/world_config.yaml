@@ -16,7 +16,7 @@ mrs_uav_managers:
       horizontal:
 
         # the frame of reference in which the points are expressed
-        frame_name: "world_origin"
+        frame_name: "local_origin"
 
         # polygon
         #
@@ -32,10 +32,10 @@ mrs_uav_managers:
       vertical:
 
         # the frame of reference in which the max&min z is expressed
-        frame_name: "world_origin"
+        frame_name: "local_origin"
 
         max_z: 15.0
-        min_z: -0.1
+        min_z: -15.0
 
       obstacles:
 
