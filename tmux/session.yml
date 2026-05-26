@@ -20,8 +20,8 @@ windows:
   - gazebo:
       layout: tiled
       panes:
-        - ros2 launch mrs_uav_gazebo_simulator simulation.launch.py spawner_config:=./config/spawner_config.yaml
-        - 'waitForGazebo && sleep 2; gz topic -t /gui/track -m gz.msgs.CameraTrack -p "track_mode: 2 follow_target { name: \"$UAV_NAME\" }"'
+        - ros2 launch mrs_uav_gazebo_simulator simulation.launch.py
+        #- 'waitForGazebo && sleep 2; gz topic -t /gui/track -m gz.msgs.CameraTrack -p "track_mode: 2 follow_target { name: \"$UAV_NAME\" }"'
   - status:
       layout: tiled
       panes:
@@ -31,7 +31,7 @@ windows:
       panes:
         # - 'waitForGazebo && ros2 service call /mrs_drone_spawner/spawn mrs_msgs/srv/String "value: 1 --$UAV_TYPE"'
         # - 'waitForGazebo && ros2 service call /mrs_drone_spawner/spawn mrs_msgs/srv/String "value: 1 --$UAV_TYPE --enable-rangefinder"'
-        - 'waitForGazebo && ros2 service call /mrs_drone_spawner/spawn mrs_msgs/srv/String "value: 1 --$UAV_TYPE --enable-ground-truth --enable-rangefinder --enable-custom-monochrome-camera"'
+        - 'waitForGazebo && ros2 service call /mrs_drone_spawner/spawn mrs_msgs/srv/String "value: 1 --f450 --enable-ground-truth --enable-rangefinder"'
   - hw_api:
       layout: tiled
       panes:
@@ -56,10 +56,10 @@ windows:
       layout: tiled
       panes:
         - waitForTakeoff && ./goto.py
-  - rviz:
-      layout: tiled
-      panes:
-        - waitForCore && ros2 run rviz2 rviz2 -d ./rviz.rviz --ros-args -p use_sim_time:=true
+  #- rviz:
+  #    layout: tiled
+  #    panes:
+  #      - waitForCore && ros2 run rviz2 rviz2 -d ./rviz.rviz --ros-args -p use_sim_time:=true
   - layout:
       layout: tiled
       panes:
