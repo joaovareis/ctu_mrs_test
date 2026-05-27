@@ -75,4 +75,44 @@ docker run -it --rm --name $CONTAINER_NAME \
     --device /dev/bus/usb \
     -v "$HOST_ROS2_WS_PATH/src:/root/ros2_ws/src" \
     $IMAGE_NAME \
-    bash -c "mkdir -p /tmp/runtime-root && chmod 700 /tmp/runtime-root && exec bash"
+    bash -c "
+        mkdir -p /tmp/runtime-root && chmod 700 /tmp/runtime-root
+        
+        echo '=== Custom Setup Starting ==='
+        
+        # 1. Source the main ROS2 installation
+        ROS_SETUP=\$(ls /opt/ros/*/setup.bash 2>/dev/null | head -n 1)
+        if [ -n \"\$ROS_SETUP\" ]; then
+            echo \"Sourcing system ROS 2 installation from \$ROS_SETUP...\"
+            source \"\$ROS_SETUP\"
+        else
+            echo \"Warning: Could not find system ROS 2 installation in /opt/ros/\"
+        fi
+
+        cd /root/ros2_ws
+        
+        echo 'Running colcon build...'
+        colcon build --symlink-install
+        
+        echo 'Exporting environment variables...'
+        export RUN_TYPE='simulation'
+        export ZENOH_CONFIG='/root/ros2_ws/zenoh_config.json'
+        
+        echo 'Sourcing workspace...'
+        if [ -f 'install/setup.bash' ]; then
+            source install/setup.bash
+        fi
+        
+        echo '=== Custom Setup Complete! ==='
+        
+        # 2. Append runtime environment safely to .bashrc to preserve terminal colors
+        echo '
+if [ -n \"'$ROS_SETUP'\" ]; then source \"'$ROS_SETUP'\"; fi
+if [ -f /root/ros2_ws/install/setup.bash ]; then source /root/ros2_ws/install/setup.bash; fi
+export RUN_TYPE=simulation
+export ZENOH_CONFIG=/root/ros2_ws/zenoh_config.json
+' >> /root/.bashrc
+
+        # 3. Open a normal interactive login shell
+        exec bash --login
+    "
