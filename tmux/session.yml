@@ -16,27 +16,31 @@ windows:
   - zenoh_router:
       layout: tiled
       panes:
-        - export ZENOH_CONFIG=/root/ros2_ws/src/ctu_mrs_test/config/zenoh_config.json && ros2 run rmw_zenoh_cpp rmw_zenohd --config /root/ros2_ws/src/ctu_mrs_test/config/zenoh_config.json 
-        
+        - tmux set -g mouse on && export ZENOH_CONFIG=/root/ros2_ws/src/ctu_mrs_test/config/zenoh_config.json && ros2 run rmw_zenoh_cpp rmw_zenohd --config /root/ros2_ws/src/ctu_mrs_test/config/zenoh_config.json
+
   - gazebo:
       layout: tiled
       panes:
-        - ros2 launch mrs_uav_gazebo_simulator simulation.launch.py
+        - sleep 3 && ros2 launch mrs_uav_gazebo_simulator simulation.launch.py
         #- 'waitForGazebo && sleep 2; gz topic -t /gui/track -m gz.msgs.CameraTrack -p "track_mode: 2 follow_target { name: \"$UAV_NAME\" }"'
+
   - status:
       layout: tiled
       panes:
         - ros2 run mrs_uav_status status.sh
+
   - spawn:
       layout: tiled
       panes:
         # - 'waitForGazebo && ros2 service call /mrs_drone_spawner/spawn mrs_msgs/srv/String "value: 1 --$UAV_TYPE"'
         # - 'waitForGazebo && ros2 service call /mrs_drone_spawner/spawn mrs_msgs/srv/String "value: 1 --$UAV_TYPE --enable-rangefinder"'
         - 'waitForGazebo && ros2 service call /mrs_drone_spawner/spawn mrs_msgs/srv/String "value: 1 --x500 --pos 0 0 0.5 0 --enable-ground-truth --enable-rangefinder"'
+
   - hw_api:
       layout: tiled
       panes:
         - waitForGazebo && sleep 6 && ros2 launch mrs_uav_px4_api api.launch.py
+
   - core:
       layout: tiled
       panes:
@@ -50,18 +54,27 @@ windows:
       layout: tiled
       panes:
       - 'waitForCore && ros2 service call /uav1/hw_api/arming std_srvs/srv/SetBool "{data: true}" && sleep 1 && ros2 service call /uav1/uav_manager/midair_activation std_srvs/srv/Trigger "{}"'
+      
   - autostart:
       layout: tiled
       panes:
         - waitForCore && ros2 launch mrs_uav_autostart automatic_start.launch.py custom_config:=./config/automatic_start.yaml
+
   - takeoff:
       layout: tiled
       panes:
         - waitForCore && sleep 6 && ./tmux/takeoff.sh
+
   - code:
       layout: tiled
       panes:
         - waitForCore && ./src/fase0/tmux_test.py
+
+  - terminal:
+      layout: tiled
+      panes:
+        - /bin/bash
+
   #- rviz:
   #    layout: tiled
   #    panes:
