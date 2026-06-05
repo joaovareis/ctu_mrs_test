@@ -61,5 +61,5 @@ mrs_uav_managers:
       vio: ["slow"]
       optflow: ["slow"]
       other: ["slow"]
-      ground_truth: ["slow", "medium"]
+      ground_truth: ["slow", "medium", "fast"]
       passthrough: ["slow", "medium"]
