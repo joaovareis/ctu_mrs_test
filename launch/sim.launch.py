@@ -12,7 +12,7 @@ from launch_ros.descriptions import ComposableNode
 def generate_launch_description():
     ld = LaunchDescription()
     
-    pkg_share_imav = FindPackageShare('imav_26')
+    pkg_share_imav = FindPackageShare('ctu_mrs_test')
 
     my_zenoh_config = PathJoinSubstitution([pkg_share_imav, 'config', 'zenoh_config.json'])
 
@@ -20,12 +20,12 @@ def generate_launch_description():
     set_run_type = SetEnvironmentVariable(name='RUN_TYPE', value='simulation')
     set_rmw_zenoh = SetEnvironmentVariable(name='RMW_IMPLEMENTATION', value='rmw_zenoh_cpp')
     set_zenoh_config = SetEnvironmentVariable(name='ZENOH_CONFIG', value=my_zenoh_config)
-    #my_autostart_config = PathJoinSubstitution([FindPackageShare('imav_26'), 'config', 'automatic_start.yaml'])
-    my_world_config     = PathJoinSubstitution([FindPackageShare('imav_26'), 'config', 'world_config.yaml'])
-    my_network_config   = PathJoinSubstitution([FindPackageShare('imav_26'), 'config', 'network_config.yaml'])
-    my_custom_config    = PathJoinSubstitution([FindPackageShare('imav_26'), 'config', 'custom_config.yaml'])
-    my_spawner_config   = PathJoinSubstitution([FindPackageShare('imav_26'), 'config', 'spawner.yaml'])
-    my_platform_config  = PathJoinSubstitution([FindPackageShare('imav_26'), 'config', 'f450.yaml'])
+    #my_autostart_config = PathJoinSubstitution([FindPackageShare('ctu_mrs_test'), 'config', 'automatic_start.yaml'])
+    my_world_config     = PathJoinSubstitution([FindPackageShare('ctu_mrs_test'), 'config', 'world_config.yaml'])
+    my_network_config   = PathJoinSubstitution([FindPackageShare('ctu_mrs_test'), 'config', 'network_config.yaml'])
+    my_custom_config    = PathJoinSubstitution([FindPackageShare('ctu_mrs_test'), 'config', 'custom_config.yaml'])
+    my_spawner_config   = PathJoinSubstitution([FindPackageShare('ctu_mrs_test'), 'config', 'spawner.yaml'])
+    my_platform_config  = PathJoinSubstitution([FindPackageShare('ctu_mrs_test'), 'config', 'f450.yaml'])
 
     zenoh_router = ExecuteProcess(
         cmd=['ros2', 'run', 'rmw_zenoh_cpp', 'rmw_zenohd', '--config', my_zenoh_config],
@@ -99,7 +99,7 @@ def generate_launch_description():
         parameters=[
             PathJoinSubstitution([FindPackageShare('mrs_uav_autostart'), 'config', 'public', 'automatic_start.yaml']),
             PathJoinSubstitution([FindPackageShare('mrs_uav_autostart'), 'config', 'private', 'automatic_start.yaml']),
-            PathJoinSubstitution([FindPackageShare('imav_26'), 'config', 'automatic_start.yaml']),
+            PathJoinSubstitution([FindPackageShare('ctu_mrs_test'), 'config', 'automatic_start.yaml']),
             {
                 'uav_name': 'uav1',
                 'simulation': True,
@@ -147,7 +147,7 @@ def generate_launch_description():
     #)
 
     python_script = Node(
-        package='imav_26',
+        package='ctu_mrs_test',
         executable='test2.py',
         name='test_node',
         namespace='uav1',

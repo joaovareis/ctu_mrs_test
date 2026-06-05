@@ -16,7 +16,7 @@ windows:
   - zenoh_router:
       layout: tiled
       panes:
-        - export ZENOH_CONFIG=/root/ros2_ws/src/imav_26/config/zenoh_config.json && ros2 run rmw_zenoh_cpp rmw_zenohd --config /root/ros2_ws/src/imav_26/config/zenoh_config.json 
+        - export ZENOH_CONFIG=/root/ros2_ws/src/ctu_mrs_test/config/zenoh_config.json && ros2 run rmw_zenoh_cpp rmw_zenohd --config /root/ros2_ws/src/ctu_mrs_test/config/zenoh_config.json 
         
   - gazebo:
       layout: tiled

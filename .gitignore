@@ -1,0 +1,9 @@
+*.mrs_status_display_config~
+
+**/__pycache__/
+
+*.pyc
+
+.vscode/
+
+**/misc/
