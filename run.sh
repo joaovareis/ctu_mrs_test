@@ -94,9 +94,12 @@ docker run -it --rm --name $CONTAINER_NAME \
         echo 'Running colcon build...'
         colcon build --symlink-install
         
-        echo 'Exporting environment variables...'
+        echo 'Exporting environment variables for the main process...'
         export RUN_TYPE='simulation'
         export ZENOH_CONFIG='/root/ros2_ws/zenoh_config.json'
+        export RMW_IMPLEMENTATION=rmw_zenoh_cpp
+        export UAV_NAME=uav1
+        export USE_SIM_TIME=\"true\"
         
         echo 'Sourcing workspace...'
         if [ -f 'install/setup.bash' ]; then
@@ -105,12 +108,20 @@ docker run -it --rm --name $CONTAINER_NAME \
         
         echo '=== Custom Setup Complete! ==='
         
-        # 2. Append runtime environment safely to .bashrc to preserve terminal colors
+        # 2. Append runtime environment customized for external docker exec clients to .bashrc
         echo '
 if [ -n \"'$ROS_SETUP'\" ]; then source \"'$ROS_SETUP'\"; fi
 if [ -f /root/ros2_ws/install/setup.bash ]; then source /root/ros2_ws/install/setup.bash; fi
+
+# Configurações universais para qualquer terminal aberto por fora
 export RUN_TYPE=simulation
-export ZENOH_CONFIG=/root/ros2_ws/zenoh_config.json
+export RMW_IMPLEMENTATION=rmw_zenoh_cpp
+export UAV_NAME=uav1
+export USE_SIM_TIME=\"true\"
+
+# Correção mágica para o docker exec: Força o modo CLIENTE conectando direto no Roteador principal
+export ZENOH_CONNECT=tcp/127.0.0.1:7447
+unset ZENOH_CONFIG
 ' >> /root/.bashrc
 
         # 3. Open a normal interactive login shell

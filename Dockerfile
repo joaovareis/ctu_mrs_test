@@ -82,31 +82,11 @@ RUN curl https://ctu-mrs.github.io/ppa2-stable/add_ppa.sh | bash \
     && rm -rf /var/lib/apt/lists/*
 
 # ======================================================================
-# Micro-XRCE-DDS-Agent
-# ======================================================================
-RUN git clone --recurse-submodules https://github.com/eProsima/Micro-XRCE-DDS-Agent.git /tmp/Micro-XRCE-DDS-Agent \
-    && cd /tmp/Micro-XRCE-DDS-Agent \
-    && mkdir build && cd build \
-    && cmake -DTHIRDPARTY=ON .. \
-    && make -j$(nproc) \
-    && make install \
-    && ldconfig \
-    && rm -rf /tmp/Micro-XRCE-DDS-Agent
-# ======================================================================
-# PX4-Autopilot
-# ======================================================================
-RUN git clone --recursive https://github.com/PX4/PX4-Autopilot.git /root/PX4-Autopilot \
-    && cd /root/PX4-Autopilot \
-    && bash ./Tools/setup/ubuntu.sh --no-nuttx
-
-# ======================================================================
 # Setup do Workspace
 # ======================================================================
 
 RUN mkdir -p /root/ros2_ws/src
 WORKDIR /root/ros2_ws
-
-RUN git clone https://github.com/PX4/px4_msgs.git /root/ros2_ws/src/px4_msgs
 
 # ======================================================================
 # Bibliotecas principais
