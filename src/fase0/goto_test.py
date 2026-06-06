@@ -9,16 +9,12 @@ from std_srvs.srv import Trigger # Importado para o comando de Land (pouso)
 from nav_msgs.msg import Odometry
 import math
 
-
+#Não usar o GOTO sob circunstância alguma. Trajectory e Reference são superiores em todos os sentidos.
 #--------
 #As velocidades aceitas são "slow", "medium" e "fast". Mas o fast não rola por que a odometria não é boa o suficiente na simulação.
 #Tem como melhorar ela publicando opt.flow ou rtk mas meu foco por enquanto é ter um pacote funcional (isso envolveria fazer um drone custom)
 #Fazer o carcara parece facil pelo tutorial deles mas eu tomei um gap pra criar um sensor.
-
-#Ainda é necessário adicionar multithreaded executors e Mutually exclusive callback groups, mas isso é papo pra FSM potente;
-#Esse é apenas uma demo com um "navigate" do body, map e a telemetria
-#O correto seria implementar o Trajectory ao invés do go-to, mas por hoje é o suficiente
-
+#---------- Esse paragrafo não faz sentido por que funciona com Trajectory e o Reference. Deve ser algum bloqueio do GOTO.
 
 class MrsFcuSquare(Node):
 

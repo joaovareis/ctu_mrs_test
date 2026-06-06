@@ -9,9 +9,7 @@ from mrs_msgs.srv import PathSrv, String as MrsString
 from std_srvs.srv import Trigger
 
 #Aqui o slow, fast e medium funcionam!!!
-#O sistema de coordenadas é Y positivo para esquerda; x positivo para frente, z positivo para cima (Quase certeza que é o do Clover)
-
-
+#O sistema de coordenadas é Y positivo para esquerda; x positivo para frente, z positivo para cima (é o do Clover)
 
 class MRSWaypointMissionClient(Node):
     def __init__(self):
@@ -46,6 +44,9 @@ class MRSWaypointMissionClient(Node):
     def enviar_e_executar_ponto(self, x, y, z, heading=0.0, tempo_voo_estimado=8.0):
         """Monta o Path para um único ponto, gera a trajetória e executa"""
         caminho = Path()
+
+        #'body' é uav1/fcu_untilted
+        #honestamente não sei quando é melhor usar fixed_origin e local_origin para o 'map'
         caminho.header.frame_id = 'uav1/fixed_origin'
         caminho.header.stamp = self.get_clock().now().to_msg()
         

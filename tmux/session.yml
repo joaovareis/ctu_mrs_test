@@ -59,7 +59,7 @@ windows:
   - code:
       layout: tiled
       panes:
-        - waitForCore && sleep 12 && ./src/fase0/tmux_trajectory_test.py
+        - waitForCore && sleep 12 && ./src/fase0/reference_test.py
 
   - terminal:
       layout: tiled
