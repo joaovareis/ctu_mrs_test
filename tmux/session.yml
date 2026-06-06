@@ -50,25 +50,16 @@ windows:
           world_config:=./config/world_config.yaml
           network_config:=./config/network_config.yaml
 
-  - arming:
-      layout: tiled
-      panes:
-      - 'waitForCore && ros2 service call /uav1/hw_api/arming std_srvs/srv/SetBool "{data: true}" && sleep 1 && ros2 service call /uav1/uav_manager/midair_activation std_srvs/srv/Trigger "{}"'
-      
-  - autostart:
-      layout: tiled
-      panes:
-        - waitForCore && ros2 launch mrs_uav_autostart automatic_start.launch.py custom_config:=./config/automatic_start.yaml
-
   - takeoff:
       layout: tiled
       panes:
-        - waitForCore && sleep 6 && ./tmux/takeoff.sh
+        - ros2 launch mrs_uav_autostart automatic_start.launch.py custom_config:=./config/automatic_start.yaml
+        - waitForCore && ./tmux/takeoff.sh
 
   - code:
       layout: tiled
       panes:
-        - waitForCore && ./src/fase0/tmux_test.py
+        - waitForCore && sleep 12 && ./src/fase0/tmux_trajectory_test.py
 
   - terminal:
       layout: tiled
