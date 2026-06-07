@@ -54,12 +54,12 @@ windows:
       layout: tiled
       panes:
         - ros2 launch mrs_uav_autostart automatic_start.launch.py custom_config:=./config/automatic_start.yaml
-        - waitForCore && ./tmux/takeoff.sh
+        #- waitForCore && ./tmux/takeoff.sh
 
   - code:
       layout: tiled
       panes:
-        - waitForCore && sleep 12 && ./src/fase0/reference_test.py
+        - waitForCore && ./src/fase0/phase0_master.py
 
   - terminal:
       layout: tiled
