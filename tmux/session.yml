@@ -59,7 +59,7 @@ windows:
   - code:
       layout: tiled
       panes:
-        - waitForCore && ./src/fase0/phase0_master.py
+        - waitForCore && ./src/fase0/phase0_master.py --ros-args --params-file ./params/fase0_sim.yaml
 
   - terminal:
       layout: tiled

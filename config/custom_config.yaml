@@ -15,10 +15,10 @@ mrs_uav_managers:
 
     takeoff:
 
-      takeoff_height: 2.0
+      takeoff_height: 3.0
 
       during_takeoff:
-        controller: "MpcController"
+        controller: "Se3Controller"
         tracker: "LandoffTracker"
 
       after_takeoff:

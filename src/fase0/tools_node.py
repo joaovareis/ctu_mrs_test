@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import math
 import os
+import yaml
 import time
 import numpy as np
 import colorful as cf
@@ -13,7 +14,7 @@ from rclpy.parameter import Parameter
 from rclpy.callback_groups import MutuallyExclusiveCallbackGroup, ReentrantCallbackGroup
 
 from mrs_msgs.msg import Reference, ReferenceStamped, Path, ControlManagerDiagnostics
-from mrs_msgs.srv import TransformReferenceSrv, PathSrv, String as MrsString
+from mrs_msgs.srv import TransformReferenceSrv, ReferenceStampedSrv, PathSrv, String as MrsString
 from std_srvs.srv import Trigger, SetBool
 from nav_msgs.msg import Odometry
 
@@ -24,13 +25,14 @@ class Tools(Node):
         self.fsm = TakeOff()
         self.start_phase = False
 
-        self.cbkgr_navigate = ReentrantCallbackGroup()
+        self.cbkgr_navigate = ReentrantCallbackGroup() #Controle de threads manual no ROS2 pra evitar deadlocks :(
         self.cbkgr_emergency = MutuallyExclusiveCallbackGroup()
 
         self.cbkgr_sc = MutuallyExclusiveCallbackGroup()
 
         self.telem = {'x':0.0, 'y':0.0, 'z':0.0, 'yaw':0.0}
-        self.sub_control_manager_diag = None
+
+        self.takeoff_height = 0.0 #Valor atualizado no navigateTakeoff
 
     def setSubscribers(self):
 
@@ -39,13 +41,6 @@ class Tools(Node):
             '/uav1/estimation_manager/odom_main',
             self.odom_callback,
             10
-        )
-
-        self.sub_diag = self.create_subscription(
-            ControlManagerDiagnostics,
-            '/uav1/control_manager/diagnostics',
-            self.callback_diagnostics,
-            10 
         )
 
     def setPublishers(self):
@@ -93,19 +88,25 @@ class Tools(Node):
             Trigger, 
             '/uav1/control_manager/stop_trajectory_tracking', 
             callback_group=self.cbkgr_emergency
-        )    
-        
+        )
+
         self.client_transform = self.create_client(
             TransformReferenceSrv,
             '/uav1/control_manager/transform_reference',
             callback_group=self.cbkgr_emergency
         )
-        
-        #self.client_stop_rfrc = self.create_client(
-        #    Trigger, 
-        #    '/uav1/control_manager/hover', 
-        #    callback_group=self.cbkgr_emergency
-        #)
+
+        self.client_set_rfrnc = self.create_client(
+            ReferenceStampedSrv,
+            '/uav1/control_manager/reference', 
+            callback_group=self.cbkgr_navigate
+        )
+
+        self.client_stop_rfrc = self.create_client(
+            Trigger,
+            '/uav1/control_manager/hover',
+            callback_group=self.cbkgr_emergency
+        )
 
         self.client_land = self.create_client(
             Trigger,
@@ -120,9 +121,10 @@ class Tools(Node):
         self.client_gen_trjct.wait_for_service()
         self.client_goto_trjct_start.wait_for_service()
         self.client_start_trjct.wait_for_service()
-        #self.client_stop_trjct.wait_for_service()
+        self.client_stop_trjct.wait_for_service()
         self.client_transform.wait_for_service()
-        #self.client_stop_rfrc.wait_for_service()
+        self.client_set_rfrnc.wait_for_service()
+        self.client_stop_rfrc.wait_for_service()
         self.client_land.wait_for_service()
         print(cf.yellow('Todos os serviços conectados com sucesso!'))
 
@@ -143,10 +145,7 @@ class Tools(Node):
 
         return response
 
-    def callback_diagnostics(self, msg):
-        self.sub_control_manager_diag = msg
-
-    def odom_callback(self, msg):
+    def odom_callback(self, msg): #No MRSCTU, não tem serviço de telemetria. Nós lemos um tópico
         self.telem['x'] = msg.pose.pose.position.x
         self.telem['y'] = msg.pose.pose.position.y
         self.telem['z'] = msg.pose.pose.position.z
@@ -204,17 +203,62 @@ class Tools(Node):
             print(cf.red("Offboard rejeitado pelo SITL"))
             return False
 
+    def navigateTakeoff(self):
+
+        #Puxar os parâmetros por RosParam me deu um gap enorme por que o namespace do custom_config é outro e eu não tenho launch pra atribuir.
+
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        package_dir = os.path.abspath(os.path.join(script_dir, '..', '..'))
+        config_path = os.path.join(package_dir, 'config', 'custom_config.yaml')
+
+        if os.path.exists(config_path):
+            try:
+                with open(config_path, 'r') as file:
+                    dados = yaml.safe_load(file)
+                
+                if dados:
+                    managers = dados.get('mrs_uav_managers', {})
+                    uav_manager = managers.get('uav_manager', {})
+                    takeoff_dict = uav_manager.get('takeoff', {})
+                    
+                    self.takeoff_height = takeoff_dict.get('takeoff_height', 2.0)
+            except:pass
+        
+        #Para dar Takeoff no CTU a gente usa o autostart. Ele realiza uma checagem completa do drone e acaba sendo mais seguro que o takeoff manual.
+        #O autostart dá início ao takeoff assim que o drone é armado e o SITL da PX4 é alterado pra offboard.
+
+        if self.navigateArm():
+            time.sleep(0.1)
+            if self.navigateOffboard():
+
+                tolerancia_metros = 0.1
+
+                while rclpy.ok():
+                    rclpy.spin_once(self, timeout_sec=0.01) 
+                    
+                    distancia = abs(self.telem['z'] - self.takeoff_height)
+                    if distancia < tolerancia_metros:
+                        break
+                
+                return True
+        
     def navigateTrajectory(self, x=0, y=0, z=0, yaw=0, speed='slow', frame='uav1/fixed_origin'):
 
-        #Speed possíveis: 'slow', 'medium' e 'fast'
-        #Frames possíveis: 'uav1/fcu_untilted' (body), 'uav1/fixed_origin' ou 'uav1/local_origin' (map) -> Averiguar diferenças entre fixed e local
+        #Este navigate deve ser utilizado para deslocamentos maiores. Chamar várias trajetórias consecutivamente dá lag (pelo menos no meu pc).
 
-        print(cf.blue(f"Navigate iniciado para o ponto ({x}, {y}, {z}) no frame '{frame}'"))
-        
+        #X+ para frente; Y+ Para esquerda; Z+ para cima. Yaw+ anti-horário.
+        #Speed possíveis: 'slow', 'medium' e 'fast'. Fast e medium dão "trancos".
+        #Frames possíveis: 'uav1/fcu_untilted' (body), 'uav1/fixed_origin' ou 'uav1/local_origin' (map) -> Prefir o fixed. Ele não muda com flutuações do LKF.
+
+        print(cf.blue(f"NavigateTrajectory iniciado para o ponto ({x}, {y}, {z}, {yaw:.1f}) no frame '{frame}'"))
+
+        # Altera o perfil de velocidade antes do movimento
         self.changePace(speed)
     
         tempo_atual = rclpy.time.Time().to_msg() 
 
+        # 1. Monta a referência desejada
         p_alvo = Reference()
         p_alvo.position.x = float(x)
         p_alvo.position.y = float(y)
@@ -226,6 +270,7 @@ class Tools(Node):
         p_stamped.header.stamp = tempo_atual
         p_stamped.reference = p_alvo
 
+        # 2. Transforma o frame enviado para o frame global (uav1/fixed_origin) para podermos calcular a distância no while
         req_trans = TransformReferenceSrv.Request()
         req_trans.frame_id = "uav1/fixed_origin"
         req_trans.reference = p_stamped
@@ -242,17 +287,20 @@ class Tools(Node):
             z_global = p_destino.position.z
             yaw_global = p_destino.heading
 
+        # 4. Uma trajetória precisa de dois pontos pelo menos. Usamos a posição atual e o alvo
         p_atual = Reference()
         p_atual.position.x = float(self.telem['x'])
         p_atual.position.y = float(self.telem['y'])
         p_atual.position.z = float(self.telem['z'])
         p_atual.heading = float(self.telem['yaw'])
-
+        
         route = Path()
         route.header.frame_id = "uav1/fixed_origin"
         route.header.stamp = tempo_atual
+        route.use_heading = True
         route.points = [p_atual, p_destino]
 
+        # 5. Prepara e envia a requisição para o serviço de referência do Control Manager
         req_gen = PathSrv.Request()
         req_gen.path = route
         future_gen = self.client_gen_trjct.call_async(req_gen)
@@ -262,6 +310,7 @@ class Tools(Node):
             print(cf.red(f'O gerador do MRS rejeitou a trajetória para ({x_global}, {y_global}, {z_global})'))
             return False
 
+        # 6. Envia o drone para o início da trajetória
         req_goto = Trigger.Request()
         future_goto = self.client_goto_trjct_start.call_async(req_goto)
         rclpy.spin_until_future_complete(self, future_goto)
@@ -269,16 +318,8 @@ class Tools(Node):
         if not (future_goto.result() and future_goto.result().success):
             print(cf.red('O Control Manager recusou alinhar no início da trajetória.'))
             return False
-        
-        while rclpy.ok():
-            rclpy.spin_once(self, timeout_sec=0.1)
-            if self.sub_control_manager_diag is not None:
-                if not self.sub_control_manager_diag.tracker_status.have_goal:
-                    break
-        
-        for _ in range(3):
-            rclpy.spin_once(self, timeout_sec=0.1)
 
+        # 6. Inicia a trajetória
         req_start = Trigger.Request()
         future_start = self.client_start_trjct.call_async(req_start)
         rclpy.spin_until_future_complete(self, future_start)
@@ -287,9 +328,10 @@ class Tools(Node):
             print(cf.red('O MRS rejeitou o comando de START da trajetória.'))
             return False
         
-        tolerancia_metros = 0.25
+        # 4. Loop de checagem baseado na telemetria
+        tolerancia_metros = 0.1
         while rclpy.ok():
-            rclpy.spin_once(self, timeout_sec=0.1) # Mantém a telemetria atualizada
+            rclpy.spin_once(self, timeout_sec=0.1) # Atualiza a telemetria via odom_callback
 
             if self.telem['x'] != 0.0 or self.telem['y'] != 0.0:
                 distancia = math.sqrt(
@@ -301,12 +343,103 @@ class Tools(Node):
                 if distancia < tolerancia_metros:
                     break
 
-        print(cf.blue(f'Navigate finalizado'))
+        print(cf.blue(f'NavigateTrajectory finalizado'))
         return True
 
     def navigateReference(self, x=0, y=0, z=0, yaw=0, speed='slow', frame='uav1/fixed_origin'):
 
-        None
+        #Este navigate deve ser utilizado para pequenas distâncias e correções. Pode dar trancos para mudanças radicais.
+
+        # X+ para frente; Y+ Para esquerda; Z+ para cima. Yaw+ anti-horário.
+        # Speed possíveis: 'slow', 'medium' e 'fast'. Fast e medium dão "trancos".
+        # Frames possíveis: 'uav1/fcu_untilted' (body), 'uav1/fixed_origin' ou 'uav1/local_origin' (map) -> Prefir o fixed. Ele não muda com flutuações do LKF.
+
+        print(cf.blue(f"Navigate via Reference iniciado para o ponto ({x}, {y}, {z}, {yaw:.1f}) no frame '{frame}'"))
+        
+        # Altera o perfil de velocidade antes do movimento
+        self.changePace(speed)
+    
+        tempo_atual = rclpy.time.Time().to_msg() 
+
+        # 1. Monta a referência desejada
+        p_alvo = Reference()
+        p_alvo.position.x = float(x)
+        p_alvo.position.y = float(y)
+        p_alvo.position.z = float(z)
+        p_alvo.heading = float(yaw)
+
+        p_stamped = ReferenceStamped()
+        p_stamped.header.frame_id = str(frame)
+        p_stamped.header.stamp = tempo_atual
+        p_stamped.reference = p_alvo
+
+        # 2. Transforma o frame enviado para o frame global (uav1/fixed_origin) para podermos calcular a distância no while
+        req_trans = TransformReferenceSrv.Request()
+        req_trans.frame_id = "uav1/fixed_origin"
+        req_trans.reference = p_stamped
+        
+        future_trans = self.client_transform.call_async(req_trans)
+        rclpy.spin_until_future_complete(self, future_trans)
+        
+        res_trans = future_trans.result()
+        if res_trans and res_trans.success:
+            p_destino = res_trans.reference.reference
+            
+            x_global = p_destino.position.x
+            y_global = p_destino.position.y
+            z_global = p_destino.position.z
+
+        else:
+            print(cf.red("Erro ao transformar o frame de referência."))
+            return False
+
+        # 3. Prepara e envia a requisição para o serviço de referência do Control Manager
+        req_ref = ReferenceStampedSrv.Request()
+        req_ref.reference = p_destino # Passa o ReferenceStamped com o frame original
+
+        future_ref = self.client_set_rfrnc.call_async(req_ref)
+        rclpy.spin_until_future_complete(self, future_ref)
+
+        res_ref = future_ref.result()
+        if not (res_ref and res_ref.success):
+            print(cf.red(f"O Control Manager rejeitou a referência para ({x}, {y}, {z})"))
+            return False
+
+        # 4. Loop de checagem baseado na telemetria
+        tolerancia_metros = 0.1
+        while rclpy.ok():
+            rclpy.spin_once(self, timeout_sec=0.1) # Atualiza a telemetria via odom_callback
+
+            if self.telem['x'] != 0.0 or self.telem['y'] != 0.0:
+                distancia = math.sqrt(
+                    (self.telem['x'] - x_global)**2 + 
+                    (self.telem['y'] - y_global)**2 + 
+                    (self.telem['z'] - z_global)**2
+                )
+
+                if distancia < tolerancia_metros:
+                    break
+
+        print(cf.blue(f"NavigateReference finalizado"))
+        return True
+
+    def stopTrajectory(self):
+
+        #Usar para um navigate interrupted com o navigateTrajectory
+        req = Trigger.Request()
+        future = self.client_stop_trjct.call_async(req)
+        rclpy.spin_until_future_complete(self, future)
+
+        return future.result().success
+
+    def stopReference(self):
+
+        #Usar para um navigate interrupted com o navigateReference
+        req = Trigger.Request()
+        future = self.client_stop_rfrc.call_async(req)
+        rclpy.spin_until_future_complete(self, future)
+
+        return future.result().success
 
     def land(self):
 

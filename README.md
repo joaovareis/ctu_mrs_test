@@ -12,15 +12,6 @@ Se tudo estiver correto, o drone vai levantar voo, completar um quadrado e pousa
 
 A fazer:
 
-- Traduzir a maquina de estados pro ROS2/MRS;
-
--> *Máquina traduzida e Navigate Trajectory finalizado. Falta fazer:*
-
-- Método takeoff no tools que não dependa de um timer
-- Navigate Reference
-- Verificar serviços para interromper trajetória/referência
-- Comentar o código explicando para usuários futuros
-
 - Implementar flags pro start.sh (fases diferentes, rosbag, etc)
 
 - Descobrir uma maneira melhor de dar start_phase

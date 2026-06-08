@@ -3,6 +3,7 @@ import math
 import os
 import time
 import numpy as np
+import colorful as cf
 
 import rclpy
 from tools_node import Tools
@@ -17,61 +18,50 @@ class Master(Tools):
         if self.fsm == 'TakeOff':
             self.current_state = 'TakeOff'
             if self.start_phase:
-
-                print("ESTADO - TakeOff")
+                print(cf.magenta("ESTADO - TakeOff"))
                 
-                print("Iniciando procedimentos de decolagem...")
+                print(cf.blue("Iniciando procedimentos de decolagem..."))
                 
-                if self.navigateArm():
-                    time.sleep(0.1)
-                    if self.navigateOffboard():
-                        time.sleep(30)
-                        print("TakeOff Complete")
+                self.navigateTakeoff()
+                time.sleep(2.0)
 
-                        self.current_state = ''
-                        self.fsm.add('TakeOff_complete')
+                print(cf.magenta("TakeOff Complete"))
 
-                    else:
-
-                        self.get_logger().error("Falha ao entrar em modo Offboard na decolagem.")
-                else:
-
-                    self.get_logger().error("Falha ao armar os motores na decolagem.")
+                self.current_state = ''
+                self.fsm.add('TakeOff_complete')
 
         if self.fsm == 'Forward':
             self.current_state = 'Forward'
-            print("ESTADO - Forward")
-            
-            print("Iniciando sequencia de movimentos na grade...")
-            
-            # Movimento 1: 2 metros para frente
-            self.navigateTrajectory(x=2.0, y=0.0, z=0.0, yaw=0.0, speed='slow', frame='uav1/fcu_untilted')
-            time.sleep(5.0)
-            
-            # Movimento 2: 4 metros para trás
-            self.navigateTrajectory(x=2.0, y=2.0, z=2.5, yaw=0.0, speed='slow', frame='uav1/fixed_origin')
-            time.sleep(5.0)
-            
-            # Movimento 3: 2 metros para frente (retorna ao centro)
-            self.navigateTrajectory(x=0.0, y=2.0, z=2.5, yaw=0.0, speed='slow', frame='uav1/fixed_origin')
-            time.sleep(5.0)
-            
-            # Movimento 4: 2 metros para a esquerda/direita (depende da convenção do eixo Y local)
-            self.navigateTrajectory(x=0.0, y=0.0, z=2.5, yaw=0.0, speed='slow', frame='uav1/fixed_origin')
-            time.sleep(5.0)
+            print(cf.magenta("ESTADO - Forward"))
 
-            print("Movimentacao Forward Complete")     
+            #Instruções sobre métodos no tools em suas respectivas definições.
+                        
+            self.navigateTrajectory(x=2.0, y=0.0, z=2.5, yaw=(math.pi/2), speed='slow', frame='uav1/local_origin')
+            time.sleep(2.0)
+            
+            self.navigateReference(x=2.0, y=0.0, z=0.0, yaw=(math.pi/2), speed='slow', frame='uav1/fcu_untilted')
+            time.sleep(2.0)
+            
+            self.navigateTrajectory(x=0.0, y=2.0, z=2.5, yaw=0.0, speed='slow', frame='uav1/fixed_origin')
+            time.sleep(2.0)
+            
+            self.navigateTrajectory(x=0.0, y=0.0, z=2.5, yaw=0.0, speed='slow', frame='uav1/fixed_origin')
+            time.sleep(2.0)
+
+            print(cf.magenta("Forward Complete"))     
 
             self.current_state = ''
             self.fsm.add('Forward_complete')
 
         if self.fsm == 'Land':
             self.current_state = 'Land'
-            print("Iniciando pouso programado...")
+            print(cf.magenta("ESTADO - Land"))
+
+            print(cf.yellow("Iniciando pouso"))
             
             self.land()
             
-            print("ACABOU - LAND FINAL")
+            print(cf.magenta("ACABOU - LAND FINAL"))
             
             self.current_state = ''
             self.fsm.add('finished')
@@ -92,25 +82,25 @@ def main(args=None):
     executor = rclpy.executors.MultiThreadedExecutor(num_threads=4)
     executor.add_node(mestre)
     
-    print("Aguardando chamada do servico ~/start_phase para iniciar a missao...")
+    print(cf.yellow("Aguardando chamada do servico ~/start_phase para iniciar a missao..."))
     
     try:
         while rclpy.ok():
             mestre.update()
             
             if mestre.fsm == 'Finish':
-                print("Máquina de estados detectou o fim da missão. Encerrando o nó mestre...")
+                print(cf.yellow("Máquina de estados encerrada"))
                 break
                 
             time.sleep(0.05)
             executor.spin_once(timeout_sec=0.01)
             
     except KeyboardInterrupt:
-        print("Master finalizado manualmente pelo usuario.")
+        print(cf.yellow("Master finalizado manualmente pelo usuario."))
 
     finally:
 
-        print("Finalizando componentes do ROS 2...")
+        print(cf.yellow("Finalizando componentes do ROS 2"))
         mestre.destroy_node()
         rclpy.shutdown()
 
